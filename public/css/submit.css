@@ -1,0 +1,305 @@
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  outline: none;
+  text-align: center;
+  border: none;
+  font-size: 15px;
+  color: #333;
+}
+html,
+body {
+  width: 1349px;
+  background-color: #FAFAFA;
+}
+html #tip,
+body #tip {
+  width: 100%;
+  height: 100%;
+  background: rgba(51, 51, 51, 0.6);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+html #tip .big,
+body #tip .big {
+  margin: -93px 0px 0px -251px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: block;
+  border: 1px solid #b0cb83;
+  width: 500px;
+  height: 280px;
+  background: #fff;
+  color: #666;
+}
+html #tip .big h4,
+body #tip .big h4 {
+  background: #1e97a2;
+  color: #fff;
+  font-size: 14px;
+  height: 35px;
+  line-height: 35px;
+  overflow: hidden;
+  padding: 0 10px;
+  border-bottom: 1px solid #1e97a2;
+}
+html #tip .big h4 a,
+body #tip .big h4 a {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ccff99;
+  float: right;
+}
+html #tip .big .mid,
+body #tip .big .mid {
+  width: 100%;
+  height: 160px;
+}
+html #tip .big .mid p,
+body #tip .big .mid p {
+  text-align: center;
+}
+html #tip .big .mid p img,
+body #tip .big .mid p img {
+  width: 100px;
+  height: 100px;
+  margin: 30px 0;
+}
+html #tip .big .bot,
+body #tip .big .bot {
+  width: 100%;
+  height: 55px;
+}
+html #tip .big .bot div,
+body #tip .big .bot div {
+  text-align: center;
+  line-height: 55px;
+}
+html #tip .big .bot div button,
+body #tip .big .bot div button {
+  width: 106px;
+  height: 34px;
+  line-height: 34px;
+  background: #1e97a2;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+}
+header {
+  width: 1349px;
+  height: 74px;
+}
+header h1 {
+  font-size: 30px;
+  width: 160px;
+  height: 74px;
+  float: left;
+  margin-left: 30px;
+}
+header a {
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+}
+header .sel-page {
+  width: 600px;
+  float: left;
+  margin-left: 60px;
+  height: 74px;
+}
+header .sel-page li {
+  text-align: center;
+  float: left;
+  width: 200px;
+  line-height: 74px;
+}
+header .sel-page li a:hover {
+  color: #1e97a2;
+  font-weight: 600;
+}
+header .login-jump {
+  width: 480px;
+  height: 74px;
+  float: right;
+}
+header .login-jump li {
+  text-align: center;
+  float: left;
+  width: 140px;
+  line-height: 74px;
+}
+header .login-jump li img {
+  width: 25px;
+  height: 25px;
+}
+header .login-jump li .person-center-img {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: url('../images/shoppingmall/个人中心.png');
+  background-size: 100% 100%;
+  position: relative;
+  top: 5px;
+  left: 0;
+  border-radius: 50%;
+}
+header .login-jump li a:hover {
+  color: #1e97a2;
+  font-weight: 600;
+}
+.submit-wrap-box {
+  width: 75%;
+  background-color: #fff;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.submit-wrap-box .sel-address-box {
+  margin-top: 50px;
+}
+.submit-wrap-box .sel-address-box .sel-address-title {
+  font-weight: 600;
+  text-align: left;
+  border-bottom: 1px solid #1e97a2;
+}
+.submit-wrap-box .sel-address-box .sel-address-list .active {
+  border: 1px solid #1e97a2;
+}
+.submit-wrap-box .sel-address-box .sel-address-list li {
+  cursor: pointer;
+  float: left;
+  margin: 10px 1%;
+  width: 22%;
+  height: 120px;
+  border: #ccc 1px solid;
+}
+.submit-wrap-box .sel-address-box .sel-address-list li div {
+  width: 100%;
+  box-sizing: border-box;
+}
+.submit-wrap-box .sel-address-box .sel-address-list li .single-address-prefix {
+  height: 30%;
+  border: 1px solid #ccc;
+}
+.submit-wrap-box .sel-address-box .sel-address-list li .single-address-prefix .single-address-city {
+  font-weight: 600;
+}
+.submit-wrap-box .sel-address-box .sel-address-list li .single-address-suffix {
+  height: 70%;
+}
+.submit-wrap-box .sel-address-box .sel-address-list li .single-address-suffix p {
+  text-align: left;
+}
+.submit-wrap-box .sel-address-box .sel-address-btn-new {
+  text-align: left;
+}
+.submit-wrap-box .sel-address-box .sel-address-btn-new button {
+  margin-left: 20px;
+  width: 100px;
+  height: 40px;
+  background-color: #1e97a2;
+  border: 1px solid #1e97a2;
+  color: #fff;
+  cursor: pointer;
+}
+.submit-wrap-box .confirm-order-form {
+  margin-top: 50px;
+}
+.submit-wrap-box .confirm-order-form .confirm-order-form-title {
+  font-weight: 600;
+  text-align: left;
+  border-bottom: 1px solid #1e97a2;
+}
+.submit-wrap-box .confirm-order-form .confirm-order-form-list-title {
+  height: 30px;
+}
+.submit-wrap-box .confirm-order-form .confirm-order-form-list-title li {
+  width: 20%;
+  height: 100%;
+  line-height: 30px;
+  float: left;
+}
+.submit-wrap-box .confirm-order-form .confirm-order-form-list-title .confirm-order-form-goods-detail {
+  width: 35%;
+}
+.submit-wrap-box .confirm-order-form .confirm-order-form-list-goods {
+  height: 60px;
+  margin-top: 20px;
+}
+.submit-wrap-box .confirm-order-form .confirm-order-form-list-goods li {
+  width: 20%;
+  height: 100%;
+  line-height: 60px;
+  float: left;
+}
+.submit-wrap-box .confirm-order-form .confirm-order-form-list-goods .confirm-order-form-goods-detail {
+  width: 35%;
+  font-size: 13px;
+  line-height: 18px;
+}
+.submit-wrap-box .confirm-order-form .confirm-order-form-list-goods .confirm-order-form-goods-detail div {
+  margin-top: 10px;
+  float: left;
+}
+.submit-wrap-box .confirm-order-form .confirm-order-form-list-goods .confirm-order-form-goods-detail div span {
+  line-height: 40px;
+}
+.submit-wrap-box .confirm-order-form .confirm-order-form-list-goods .confirm-order-form-goods-detail .confirm-order-form-goods-detail-img {
+  width: 22%;
+}
+.submit-wrap-box .confirm-order-form .confirm-order-form-list-goods .confirm-order-form-goods-detail .confirm-order-form-goods-detail-describe {
+  width: 50%;
+}
+.submit-wrap-box .confirm-order-form .confirm-order-form-list-goods .confirm-order-form-goods-detail .confirm-order-form-goods-detail-class {
+  width: 22%;
+}
+.submit-wrap-box .confirm-order-form .confirm-order-form-list-goods .confirm-order-form-goods-detail img {
+  width: 40px;
+  height: 40px;
+}
+.submit-wrap-box .confirm-order-form-info-box {
+  margin-top: 50px;
+}
+.submit-wrap-box .confirm-order-form-info-box .confirm-order-form-info {
+  margin-bottom: 30px;
+  margin-right: 30px;
+  height: 160px;
+  float: right;
+}
+.submit-wrap-box .confirm-order-form-info-box .confirm-order-form-info div {
+  box-sizing: border-box;
+}
+.submit-wrap-box .confirm-order-form-info-box .confirm-order-form-info .order-form-info {
+  width: 100%;
+  height: 120px;
+  padding: 10px;
+  border: 1px solid #1e97a2;
+}
+.submit-wrap-box .confirm-order-form-info-box .confirm-order-form-info .order-form-info p {
+  text-align: right;
+}
+.submit-wrap-box .confirm-order-form-info-box .confirm-order-form-info .order-form-info p i {
+  font-style: normal;
+  font-weight: 600;
+}
+.submit-wrap-box .confirm-order-form-info-box .confirm-order-form-info .order-form-info p .due-price {
+  color: #f40;
+  font-size: 20px;
+  font-weight: 600;
+}
+.submit-wrap-box .confirm-order-form-info-box .confirm-order-form-info .submit-btn button {
+  width: 100px;
+  height: 40px;
+  background-color: #1e97a2;
+  color: #fff;
+  float: right;
+  cursor: pointer;
+}

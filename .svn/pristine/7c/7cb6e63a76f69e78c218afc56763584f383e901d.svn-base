@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/shoppingtrolley.css">
+</head>
+<body>
+    <header><img src="../images/1.png" alt=""></header>
+    <section class="shop-trolley-wrap-box">
+        <div class="shop-trolley-title">购物车</div>
+        <div class="shop-trolley-goods-title">
+            <ul class="clearfix">
+                <li class="goods-detail">商品信息</li>
+                <li>单价</li>
+                <li>数量</li>
+                <li>金额</li>
+                <li>操作</li>
+            </ul>
+        </div>
+        <div class="shop-trolley-goods-list">
+            <ul class="clearfix">
+                <li class="single-goods-detail">
+                    <div class="single-goods-detail-sel"> <input type="checkbox"></div>
+                    <div class="single-goods-detail-img"><img src="../images/body-fat-scales/bfs-01/bfs-01-color-01.jpg" alt=""></div>
+                    <div class="single-goods-detail-describe">
+                        <span>体脂秤称重减脂智能家用精准体重秤健康WiFi电子秤男女</span>
+                    </div>
+                    <div class="single-goods-detail-class">氧气紫</div>
+                </li>
+                <li class="single-goods-price">￥199</li>
+                <li class="single-goods-volume">
+                    <div class="clearfix">
+                        <button>-</button>
+                        <input type="text" class="goods-sel-btn-num" value="0">
+                        <button>+</button>
+                    </div>
+                </li>
+                <li class="single-goods-sum">￥199</li>
+                <li class="single-goods-del"><a href="">删除</a></li>
+            </ul>
+            <ul class="clearfix">
+                <li class="single-goods-detail">
+                    <div class="single-goods-detail-sel"> <input type="checkbox"></div>
+                    <div class="single-goods-detail-img"><img src="../images/body-fat-scales/bfs-01/bfs-01-color-01.jpg" alt=""></div>
+                    <div class="single-goods-detail-describe">
+                        <span>体脂秤称重减脂智能家用精准体重秤健康WiFi电子秤男女</span>
+                    </div>
+                    <div class="single-goods-detail-class">氧气紫</div>
+                </li>
+                <li class="single-goods-price">￥199</li>
+                <li class="single-goods-volume">
+                    <div class="clearfix">
+                        <button>-</button>
+                        <input type="text" class="goods-sel-btn-num" value="0">
+                        <button>+</button>
+                    </div>
+                </li>
+                <li class="single-goods-sum">￥199</li>
+                <li class="single-goods-del"><a href="">删除</a></li>
+            </ul>
+            <ul class="clearfix">
+                <li class="single-goods-detail">
+                    <div class="single-goods-detail-sel"> <input type="checkbox"></div>
+                    <div class="single-goods-detail-img"><img src="../images/body-fat-scales/bfs-01/bfs-01-color-01.jpg" alt=""></div>
+                    <div class="single-goods-detail-describe">
+                        <span>体脂秤称重减脂智能家用精准体重秤健康WiFi电子秤男女</span>
+                    </div>
+                    <div class="single-goods-detail-class">氧气紫</div>
+                </li>
+                <li class="single-goods-price">￥199</li>
+                <li class="single-goods-volume">
+                    <div class="clearfix">
+                        <button>-</button>
+                        <input type="text" class="goods-sel-btn-num" value="0">
+                        <button>+</button>
+                    </div>
+                </li>
+                <li class="single-goods-sum">￥199</li>
+                <li class="single-goods-del"><a href="">删除</a></li>
+            </ul>
+            <ul class="clearfix">
+                <li class="single-goods-detail">
+                    <div class="single-goods-detail-sel"> <input type="checkbox"></div>
+                    <div class="single-goods-detail-img"><img src="../images/body-fat-scales/bfs-01/bfs-01-color-01.jpg" alt=""></div>
+                    <div class="single-goods-detail-describe">
+                        <span>体脂秤称重减脂智能家用精准体重秤健康WiFi电子秤男女</span>
+                    </div>
+                    <div class="single-goods-detail-class">氧气紫</div>
+                </li>
+                <li class="single-goods-price">￥199</li>
+                <li class="single-goods-volume">
+                    <div class="clearfix">
+                        <button>-</button>
+                        <input type="text" class="goods-sel-btn-num" value="0">
+                        <button>+</button>
+                    </div>
+                </li>
+                <li class="single-goods-sum">￥199</li>
+                <li class="single-goods-del"><a href="">删除</a></li>
+            </ul>
+        </div>
+        <div class="shop-trolley-goods-sum">
+            <ul class="clearfix">
+                <li class="goods-detail">
+                    <div class="goods-sum-all-sel"><input type="checkbox"></div>
+                    <div class="goods-sum-total">已经选购了<span>X</span>件商品</div>
+                </li>
+                <li></li>
+                <li></li>
+                <li class="goods-sum-price">总计: <span>￥9999</span></li>
+                <li class="goods-sum-submit"><button>结算</button></li>
+            </ul>
+        </div>
+    </section>
+</body>
+</html>

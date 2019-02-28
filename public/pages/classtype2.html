@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/classtype2.css">
+    <script src="../dist/jquery-3.3.1.js"></script>
+</head>
+
+<body>
+    <header class="clearfix">
+        <h1 class="return-index"><img class="logo" src="../images/shoppingmall/logo1.png" alt="">Calorie</h1>
+        <ul class="sel-page clearfix">
+            <li><a class="video-class" href="javascript:;">视频教学</a></li>
+            <li><a class="shop-mall" href="javascript:;">商城</a></li>
+            <li><a class="community-page" href="javascript:;">社区论坛</a></li>
+        </ul>
+        <ul class="login-jump clearfix">
+            <li><a class="reg-login" href="">注册/登录</a></li>
+            <li>
+                <div class="person-center-img">
+                </div>
+                <a class="person-center" href="javascript:;">个人中心</a>
+            </li>
+            <li>
+                <img src="../images/shoppingmall/购物车.png" alt="">
+                <a  class="shop-car" href="javascript:;">购物车</a>
+            </li>
+        </ul>
+    </header>
+
+<section>
+    <div id="c2-div1"></div>
+    <ul id="c2-ul">
+        <!--<li class="c2-li">-->
+        <!--<a href="">-->
+            <!--<img src="../images/class/classtype2/8柔韧性提升/一字马竖叉.jpg" alt="">-->
+            <!--<div class="div2"><p class="div2-p1">一字马竖叉</p><p>1 节</p></div>-->
+            <!--<div class="div2-2"><div><p>k1</p><ul>-->
+                <!--<li><img src="../images/class/classtype2/strength/true.png" alt=""></li>-->
+                <!--<li><img src="../images/class/classtype2/strength/true.png" alt=""></li>-->
+                <!--<li><img src="../images/class/classtype2/strength/true.png" alt=""></li>-->
+                <!--<li><img src="../images/class/classtype2/strength/true.png" alt=""></li>-->
+                <!--<li><img src="../images/class/classtype2/strength/true.png" alt=""></li>-->
+            <!--</ul>-->
+            <!--</div><p>1362736人训练</p></div>-->
+        <!--</a>-->
+    <!--</li>-->
+    </ul>
+</section>
+<footer></footer>
+</body>
+<script>
+    $(function () {
+        $(document).ready(function () {
+            var cid=window.location.search.match(/(?<=cid=)\d+/)[0];
+            var uid=window.location.search.match(/(?<=uid=)\d+/)[0];
+            console.log(cid);
+            console.log(uid);
+            $.ajax({
+                url:'/type1data',
+                data:{id:cid},
+                success:function (res) {
+                    if(!res.error){
+                        $('#c2-div1').append('<span >课程分类-'+res.data[0].Type1_name+'</span>');
+                        $('head').append('<title>课程分类-'+res.data[0].Type1_name+'</title>')
+                    }
+                }
+            });
+            $.ajax({
+                url:'/classtype1-1',
+                data:{id:cid},
+                success:function (res) {
+                    if(!res.error){
+                        $('#c2-div1').append('<span id="span1">共'+res.data.length+'个课程</span>')
+                        for(var i=0;i<res.data.length;i++){
+                            $('#c2-ul').append('<li class="c2-li" index="'+i+'"> <a href="../pages/classtype3.html?uid='+uid+'&cid='+res.data[i].Type2_id+'"> <img src="'+res.data[i].Type2_src+'" alt=""> <div class="div2"><p class="div2-p1">'+res.data[i].Type2_name+'</p><p>1 节</p></div> <div class="div2-2"><div id="'+res.data[i].Type2_id+'"><p>k'+res.data[i].Type2_energy+'</p><ul><li><img src="../images/class/classtype2/strength/true.png" alt=""></li> <li><img src="../images/class/classtype2/strength/true.png" alt=""></li> <li><img src="../images/class/classtype2/strength/true.png" alt=""></li> <li><img src="../images/class/classtype2/strength/true.png" alt=""></li> <li><img src="../images/class/classtype2/strength/true.png" alt=""></li> </ul> </div><p>1362736人训练</p></div> </a> </li>')
+                            console.log(res.data[i].Type2_energy);
+                            for(var j=0;j<res.data[i].Type2_energy;j++){
+                                $('#'+res.data[i].Type2_id+' img').eq(j).css('opacity','1');
+                            }
+
+                        }}
+                }
+            });
+
+        })
+        var userId='';
+        function nav(){
+            if(window.location.search.match(/(?<=uid=)\d+/).length){
+                userId=window.location.search.match(/(?<=uid=)\d+/)[0];
+
+                $('.reg-login').html('退出登录')
+            }
+            $('.reg-login').click(function(){
+                window.location.href=`./login.html`;
+            });
+            $('.video-class').click(function(){
+                window.location.href=`./classtype1.html?uid=${userId}`;
+            });
+            $('.shop-mall').click(function(){
+                window.location.href=`./shoplist.html?uid=${userId}`;
+            });
+            $('.community-page').click(function(){
+                window.location.href=`./community.html?uid=${userId}`;
+            });
+            $('.shop-car').click(function(){
+                window.location.href=`./shoppingtrolley.html?uid=${userId}`;
+            });
+            $('.penson-center').click(function(){
+                window.location.href=`./mine.html?uid=${userId}`;
+            });
+            $('.return-index').click(function(){
+                window.location.href=`./index.html?uid=${userId}`;
+            });
+        };
+        nav();
+    })
+
+</script>
+</html>

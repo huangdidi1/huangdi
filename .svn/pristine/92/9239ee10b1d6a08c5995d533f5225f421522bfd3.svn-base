@@ -1,0 +1,19 @@
+var express=require('express');
+var indexController=require('./../controller/indexController.js');
+
+
+var myRoute=express.Router();
+
+myRoute.route('/index').get(indexController.getName);
+myRoute.route('/Invideo').get(indexController.getVideoMsg);
+myRoute.route('/Inshop').get(indexController.getShopMsg);
+myRoute.route('/Incommunity').get(indexController.getCommunityMsg);
+
+
+
+
+
+
+
+
+module.exports=myRoute;

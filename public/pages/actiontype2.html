@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../dist/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="../css/actiontype2.css">
+</head>
+<body>
+<header class="clearfix">
+    <h1 class="return-index"><img class="logo" src="../images/shoppingmall/logo1.png" alt="">Calorie</h1>
+    <ul class="sel-page clearfix">
+        <li><a class="video-class" href="javascript:;">视频教学</a></li>
+        <li><a class="shop-mall" href="javascript:;">商城</a></li>
+        <li><a class="community-page" href="javascript:;">社区论坛</a></li>
+    </ul>
+    <ul class="login-jump clearfix">
+        <li><a class="reg-login" href="">注册/登录</a></li>
+        <li>
+            <div class="person-center-img">
+            </div>
+            <a class="person-center" href="javascript:;">个人中心</a>
+        </li>
+        <li>
+            <img src="../images/shoppingmall/购物车.png" alt="">
+            <a  class="shop-car" href="javascript:;">购物车</a>
+        </li>
+    </ul>
+</header>
+<div id="a2-div1">
+    <!--<span >动作分类-胸部</span><span id="span1">共x个动作</span>-->
+</div>
+<div id="a2-div2">
+<ul>
+    <!--<li><a href="class.html"><img src="../images/class/classtype3/一字马竖叉/俯身慢速跨步登山.jpg" alt=""><p>俯身慢速跨步登山</p><br><p class="c3-p3">1x16"</p></a></li>-->
+    <!--<li><a href=""><img src="../images/class/classtype3/一字马竖叉/右侧跨坐臀部拉伸.jpg" alt=""><p>右侧跨坐臀部拉伸</p><br><p class="c3-p3">1x14"</p></a></li>-->
+    <!--<li><a href=""><img src="../images/class/classtype3/一字马竖叉/右腿前侧跪式拉伸.jpg" alt=""><p>右腿前侧跪式拉伸</p><br><p class="c3-p3">1x14"</p></a></li>-->
+    <!--<li><a href=""><img src="../images/class/classtype3/一字马竖叉/左侧弓步提膝.jpg" alt=""><p>左侧弓步提膝</p><br><p class="c3-p3">1x8"</p></a></li>-->
+    <!--<li><a href=""><img src="../images/class/classtype3/一字马竖叉/俯身慢速跨步登山.jpg" alt=""><p>俯身慢速跨步登山</p><br><p class="c3-p3">1x16"</p></a></li>-->
+    <!--<li><a href=""><img src="../images/class/classtype3/一字马竖叉/右侧跨坐臀部拉伸.jpg" alt=""><p>右侧跨坐臀部拉伸</p><br><p class="c3-p3">1x14"</p></a></li>-->
+    <!--<li><a href=""><img src="../images/class/classtype3/一字马竖叉/右腿前侧跪式拉伸.jpg" alt=""><p>右腿前侧跪式拉伸</p><br><p class="c3-p3">1x14"</p></a></li>-->
+    <!--<li><a href=""><img src="../images/class/classtype3/一字马竖叉/左侧弓步提膝.jpg" alt=""><p>左侧弓步提膝</p><br><p class="c3-p3">1x8"</p></a></li>-->
+    <!--<li><a href=""><img src="../images/class/classtype3/一字马竖叉/俯身慢速跨步登山.jpg" alt=""><p>俯身慢速跨步登山</p><br><p class="c3-p3">1x16"</p></a></li>-->
+    <!--<li><a href=""><img src="../images/class/classtype3/一字马竖叉/右侧跨坐臀部拉伸.jpg" alt=""><p>右侧跨坐臀部拉伸</p><br><p class="c3-p3">1x14"</p></a></li>-->
+    <!--<li><a href=""><img src="../images/class/classtype3/一字马竖叉/右腿前侧跪式拉伸.jpg" alt=""><p>右腿前侧跪式拉伸</p><br><p class="c3-p3">1x14"</p></a></li>-->
+    <!--<li><a href=""><img src="../images/class/classtype3/一字马竖叉/左侧弓步提膝.jpg" alt=""><p>左侧弓步提膝</p><br><p class="c3-p3">1x8"</p></a></li>-->
+    <!--<li><a href=""><img src="../images/class/classtype3/一字马竖叉/俯身慢速跨步登山.jpg" alt=""><p>俯身慢速跨步登山</p><br><p class="c3-p3">1x16"</p></a></li>-->
+    <!--<li><a href=""><img src="../images/class/classtype3/一字马竖叉/右侧跨坐臀部拉伸.jpg" alt=""><p>右侧跨坐臀部拉伸</p><br><p class="c3-p3">1x14"</p></a></li>-->
+    <!--<li><a href=""><img src="../images/class/classtype3/一字马竖叉/右腿前侧跪式拉伸.jpg" alt=""><p>右腿前侧跪式拉伸</p><br><p class="c3-p3">1x14"</p></a></li>-->
+    <!--<li><a href=""><img src="../images/class/classtype3/一字马竖叉/左侧弓步提膝.jpg" alt=""><p>左侧弓步提膝</p><br><p class="c3-p3">1x8"</p></a></li>-->
+</ul></div>
+</body>
+<script>
+$(function () {
+    $(document).ready(function () {
+        var cid=window.location.search.match(/(?<=cid=)\d+/)[0];
+        var uid=window.location.search.match(/(?<=uid=)\d+/)[0];
+        $.ajax({
+            url: '/type1data',
+            data: {id:uid},
+            success: function (res) {
+                if (!res.error) {
+                    $('#a2-div1').append('<span >动作分类-' + res.data[0].Type1_name + '</span>');
+                    $('head').append('<title>动作分类-' + res.data[0].Type1_name + '</title>')
+                }
+            }
+        });
+        $.ajax({
+            url:'/classtype2',
+            data:{id:cid},
+            success:function (res) {
+                if(!res.error){
+                    $('#a2-div1').append('<span id="span1">共'+res.data.length+'个动作</span>');
+                    for(var i=0;i<res.data.length;i++){
+                        $('#a2-div2 ul').append('<li><a href="../pages/class.html?uid='+uid+'&cid='+res.data[i].Type3_id+'"><img src="'+res.data[i].Type3_src+'" alt=""><p>'+res.data[i].Type3_name+'</p><br><p class="c3-p3">'+res.data[i].Type3_time+'</p></a></li>')
+                    }}}
+        })
+    });
+    var userId='';
+    function nav(){
+        if(window.location.search.match(/(?<=uid=)\d+/).length){
+            userId=window.location.search.match(/(?<=uid=)\d+/)[0];
+            console.log(userId);
+            $('.reg-login').html('退出登录')
+        }
+        $('.reg-login').click(function(){
+            window.location.href=`./login.html`;
+        });
+        $('.video-class').click(function(){
+            window.location.href=`./classtype1.html?uid=${userId}`;
+        });
+        $('.shop-mall').click(function(){
+            window.location.href=`./shoplist.html?uid=${userId}`;
+        });
+        $('.community-page').click(function(){
+            window.location.href=`./community.html?uid=${userId}`;
+        });
+        $('.shop-car').click(function(){
+            window.location.href=`./shoppingtrolley.html?uid=${userId}`;
+        });
+        $('.penson-center').click(function(){
+            window.location.href=`./mine.html?uid=${userId}`;
+        });
+        $('.return-index').click(function(){
+            window.location.href=`./index.html?uid=${userId}`;
+        });
+    };
+    nav();
+})
+
+</script>
+</html>

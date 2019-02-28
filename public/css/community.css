@@ -1,0 +1,430 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('../font/iconfont.ttf');
+}
+.iconfont {
+  font-family: "iconfont";
+  font-style: normal;
+  font-size: 16px;
+  line-height: 30px;
+  color: #b9b7be;
+  margin-left: 5px;
+}
+.iconfont1 {
+  font-family: "iconfont";
+  font-style: normal;
+  font-size: 16px;
+  line-height: 30px;
+  color: #b9b7be;
+  margin-left: 20px;
+}
+body {
+  background: #FAFAFA;
+}
+header {
+  width: 1349px;
+  height: 74px;
+}
+header h1 {
+  font-size: 30px;
+  width: 160px;
+  height: 74px;
+  float: left;
+  margin-left: 30px;
+}
+header a {
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+}
+header .sel-page {
+  width: 600px;
+  float: left;
+  margin-left: 60px;
+  height: 74px;
+}
+header .sel-page li {
+  text-align: center;
+  float: left;
+  width: 200px;
+  line-height: 74px;
+}
+header .sel-page li a:hover {
+  color: #1e97a2;
+  font-weight: 600;
+}
+header .login-jump {
+  width: 480px;
+  height: 74px;
+  float: right;
+}
+header .login-jump li {
+  text-align: center;
+  float: left;
+  width: 140px;
+  line-height: 74px;
+}
+header .login-jump li img {
+  width: 25px;
+  height: 25px;
+}
+header .login-jump li .person-center-img {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: url('../images/shoppingmall/个人中心.png');
+  background-size: 100% 100%;
+  position: relative;
+  top: 5px;
+  left: 0;
+  border-radius: 50%;
+}
+header .login-jump li a:hover {
+  color: #1e97a2;
+  font-weight: 600;
+}
+section .release {
+  width: 724px;
+  height: 104px;
+  margin: 15px auto;
+  background: white;
+  box-shadow: 2px 2px 6px #999;
+  position: relative;
+}
+section .release .releaseTop {
+  width: 100%;
+  height: 74px;
+  position: relative;
+}
+section .release .releaseTop textarea {
+  width: 708px;
+  height: 56px;
+  padding: 8px;
+  resize: none;
+  line-height: 18px;
+  font-size: 12px;
+  color: #333;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+section .release .releaseTop .ok {
+  display: none;
+  width: 116px;
+  height: 50px;
+  position: absolute;
+  top: 11px;
+  left: 306px;
+}
+section .release .releaseTop .ok div {
+  float: left;
+  width: 50px;
+  height: 50px;
+  background: url("../images/qq/icon.png") no-repeat -367px 5px;
+}
+section .release .releaseTop .ok p {
+  height: 50px;
+  line-height: 50px;
+  color: #333;
+  float: left;
+}
+section .release .releaseBottom {
+  width: 726px;
+  height: 30px;
+  position: relative;
+}
+section .release .releaseBottom .iface {
+  width: 80px;
+  height: 30px;
+  float: left;
+  overflow: hidden;
+  cursor: pointer;
+}
+section .release .releaseBottom .iface img {
+  float: left;
+  margin-top: 4px;
+}
+section .release .releaseBottom .iface p {
+  height: 100%;
+  font-size: 15px;
+  color: #333;
+  float: left;
+  line-height: 30px;
+  margin-left: 8px;
+}
+section .release .releaseBottom .iface:hover p {
+  color: #1e97a2;
+}
+section .release .releaseBottom .iimg {
+  width: 80px;
+  height: 30px;
+  float: left;
+  overflow: hidden;
+  cursor: pointer;
+}
+section .release .releaseBottom .iimg img {
+  float: left;
+  margin-top: 4px;
+}
+section .release .releaseBottom .iimg p {
+  height: 100%;
+  font-size: 15px;
+  color: #333;
+  float: left;
+  line-height: 30px;
+  margin-left: 8px;
+}
+section .release .releaseBottom .iimg:hover p {
+  color: #1e97a2;
+}
+section .release .releaseBottom input {
+  width: 80px;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 80px;
+}
+section .release .releaseBottom button {
+  width: 86px;
+  height: 100%;
+  float: right;
+  font-size: 15px;
+  background: #1e97a2;
+  border: none;
+  outline: none;
+  color: white;
+}
+section .release .icon {
+  display: none;
+  width: 430px;
+  height: 258px;
+  border: 1px solid #e8e8e8;
+  box-shadow: 4px 5px 6px #999;
+  position: absolute;
+  top: 104px;
+  left: 0;
+  z-index: 10;
+  background: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+section .release .icon .new {
+  border: 8px solid white;
+  border-bottom-color: #cccccc;
+  position: absolute;
+  top: -8px;
+  left: 19px;
+  z-index: 4;
+}
+section .release .icon .icon1 {
+  width: 373px;
+  height: 218px;
+  margin: 20px auto;
+  position: relative;
+}
+section .release .icon .icon1 .close {
+  color: #333;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  position: absolute;
+  top: -17px;
+  right: -24px;
+  cursor: pointer;
+}
+section .release .icon .icon1 .close:hover {
+  color: #1e97a2;
+}
+section .release .icon .icon1 ul li {
+  width: 26px;
+  height: 22px;
+  border: 1px solid #e8e8e8;
+  overflow: hidden;
+  margin: -1px 0 0 -1px;
+  padding: 4px 2px;
+  text-align: center;
+  float: left;
+}
+section .release .icon .icon1 ul li img {
+  width: 22px;
+  height: 22px;
+}
+section .release .icon .icon1 ul li:hover {
+  border: 1px solid #1e97a2;
+  background: #fff9ec;
+  position: relative;
+  z-index: 2;
+}
+section .release .icon2 {
+  display: none;
+  width: 252px;
+  border: 1px solid #e8e8e8;
+  box-shadow: 4px 5px 6px #999;
+  overflow: hidden;
+  padding: 16px 16px 10px 16px;
+  background: white;
+  position: absolute;
+  top: 104px;
+  left: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+section .release .icon2 .new {
+  border: 8px solid white;
+  border-bottom-color: #cccccc;
+  position: absolute;
+  top: -9px;
+  left: 98px;
+  z-index: 4;
+}
+section .release .icon2 p {
+  margin: -11px 0 10px;
+  font-size: 15px;
+  font-weight: bold;
+}
+section .release .icon2 .close1 {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  position: absolute;
+  top: 4px;
+  right: 5px;
+}
+section .release .icon2 .close1:hover {
+  color: #1e97a2;
+}
+section .release .icon2 em {
+  font-style: normal;
+  font-size: 15px;
+  color: #333;
+}
+section .release .icon2 .icon3 {
+  margin: 10px auto;
+}
+section .release .icon2 .icon3 li {
+  width: 80px;
+  height: 80px;
+  margin: 2px;
+  float: left;
+  position: relative;
+}
+section .release .icon2 .icon3 li img {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 12;
+}
+section .release .icon2 .icon3 li div {
+  width: 100%;
+  height: 100%;
+  display: none;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.4);
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 14;
+}
+section .release .icon2 .icon3 li div p {
+  width: 20px;
+  height: 20px;
+  color: white;
+  position: absolute;
+  top: 13px;
+  right: -1px;
+}
+section .release .icon2 .icon3 li:hover div {
+  display: block;
+}
+section .release .icon2 .icon3 .push {
+  float: left;
+  border: 1px dashed #333;
+  margin: 2px;
+  position: relative;
+}
+section .release .icon2 .icon3 .push:hover {
+  border: 1px dashed #1e97a2;
+}
+section .release .icon2 .icon3 .push:hover p {
+  color: #1e97a2;
+}
+section .release .icon2 .icon3 .push p {
+  position: absolute;
+  top: 28px;
+  left: 29px;
+  font-size: 30px;
+  color: #999;
+}
+section .release .icon2 .icon3 .push input {
+  width: 78px;
+  height: 80px;
+  opacity: 0;
+}
+section .list {
+  margin: 0 auto;
+  width: 744px;
+  background: #FFFFFF;
+}
+section .list ul {
+  float: left;
+}
+section .list li {
+  width: 234px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  border: 1px solid white;
+  box-shadow: 2px 2px 6px #999;
+}
+section .list li .upimg {
+  width: 100%;
+  height: 244px;
+}
+section .list li p {
+  width: 100%;
+  height: 46px;
+  color: #333;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 22px;
+  overflow: hidden;
+}
+section .list li p img {
+  width: 21px;
+  height: 21px;
+  margin-left: 3px;
+}
+section .list li span {
+  list-style: none;
+  color: #b9b7be;
+  margin-left: 3px;
+}
+section .list li u {
+  text-decoration: none;
+  color: #b9b7be;
+  margin-left: 3px;
+}
+section .list li strong {
+  margin-right: 20px;
+}
+section .list li:hover {
+  border: 1px solid #1e97a2;
+  box-shadow: 4px 4px 6px #999;
+}

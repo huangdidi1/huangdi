@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <script src="../dist/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="../css/class.css">
+</head>
+
+<body>
+<header class="clearfix">
+    <h1 class="return-index"><img class="logo" src="../images/shoppingmall/logo1.png" alt="">Calorie</h1>
+    <ul class="sel-page clearfix">
+        <li><a class="video-class" href="javascript:;">视频教学</a></li>
+        <li><a class="shop-mall" href="javascript:;">商城</a></li>
+        <li><a class="community-page" href="javascript:;">社区论坛</a></li>
+    </ul>
+    <ul class="login-jump clearfix">
+        <li><a class="reg-login" href="">注册/登录</a></li>
+        <li>
+            <div class="person-center-img">
+            </div>
+            <a class="person-center" href="javascript:;">个人中心</a>
+        </li>
+        <li>
+            <img src="../images/shoppingmall/购物车.png" alt="">
+            <a  class="shop-car" href="javascript:;">购物车</a>
+        </li>
+    </ul>
+</header>
+<section>
+
+    <video id="c-video" controls="controls" loop="loop" src=""></video>
+    <div id="c-div">
+       <h2></h2><button id="c-btn">收藏</button>
+        <br>
+        <img src="../images/class/class/1.png" alt="">
+        <p>步骤</p>
+        <ul id="c-ul1">
+            <!--<li>&nbsp;双手用力抱紧膝盖紧贴腹部上提</li>-->
+            <!--<li>&nbsp;提膝同时踮起脚尖</li>-->
+        </ul>
+        <p>呼吸</p>
+        <ul  id="c-ul2">
+            <!--<li>&nbsp;抬腿时吸气，还原时呼气</li>-->
+        </ul>
+        <p>动作感觉</p>
+        <ul id="c-ul3">
+            <!--<li>&nbsp;抬腿时，臀部有一定的牵拉感</li>-->
+        </ul>
+        <div>
+        <img src="" alt="">
+        <img src="" alt="">
+        </div>
+        <p>常见错误</p>
+        <ul id="c-ul4">
+            <!--<li>&nbsp;错误：腿部提起幅度过小</li>-->
+            <!--<li>&nbsp;解决：适当增加提腿幅度，感觉到臀部有一定的牵拉感</li>-->
+        </ul>
+        <p>细节图示</p>
+        <img src="" alt="">
+        <ul id="c-ul5">
+            <!--<li>抱紧膝盖</li>-->
+            <!--<li>将膝盖拉向胸口 </li>-->
+            <!--<li>脚尖踮起</li>-->
+        </ul>
+
+    </div>
+</section>
+<footer></footer>
+</body>
+<script>
+    $(function () {
+        var collect2;
+
+        $(document).ready(function () {
+            var cid=window.location.search.match(/(?<=cid=)\d+/)[0];
+            var uid=window.location.search.match(/(?<=uid=)\d+/)[0];
+            $.ajax({
+                url:'/selectcollect',
+                data:{uid:uid,cid:cid},
+                success:function (res) {
+                    console.log(res.data);
+                    if(res.data.length){
+                        collect2=true;
+                        $('#c-btn').attr('class','c-change');
+                        $('#c-btn').html('已收藏') ;
+                    }else {
+                        collect2=false;
+                        $('#c-btn').attr('class','');
+                        $('#c-btn').html('收藏');
+                    }
+                }
+            });
+            $('#c-btn').click(function () {
+                if(collect2==true){
+                    collect2=false;
+//            $(this).css('color','#24c789');
+//            $(this).css(' background-color','white');
+                    $(this).attr('class','');
+                    $(this).html('收藏');
+                    $.ajax({
+                        url:'/nocollect',
+                        data:{uid:uid,cid:cid},
+                        success:function (res) {
+                            if(!res.error){
+                                alert(1)
+                            }
+                        }
+                    })
+
+                }else {
+                    collect2=true;
+//            $(this).css('color','white');
+//            $(this).css(' background-color','#24c789');
+                    $(this).attr('class','c-change');
+                    $(this).html('已收藏') ;
+                    $.ajax({
+                        url:'/collect',
+                        data:{uid:uid,cid:cid},
+                        success:function (res) {
+                            if(!res.error){
+                                alert(2)
+                            }
+                        }
+                    })
+                }
+            });
+            $.ajax({
+                url:'/type3data',
+                data:{id:cid},
+                success:function (res) {
+                    console.log(res.data);
+                    if(!res.error){
+                        $('head').append('<title>'+res.data[0].Type3_name+'-calorie</title>')
+                        $('#c-video').attr('src',res.data[0].Type3_video);
+                        $('h2').html(''+res.data[0].Type3_name+'');
+
+                        $('#c-ul1').append(''+res.data[0].Type3_point+'');
+                        $('#c-ul2').append(''+res.data[0].Type3_breath+'');
+                        $('#c-ul3').append(''+res.data[0].Type3_feel+'');
+                        $('#c-ul4').append(''+res.data[0].Type3_error+'');
+                        $('#c-ul5').append(''+res.data[0].Type3_solve+'');
+                        $('section img').eq(1).attr('src',res.data[0].Type3_src2);
+                        $('section img').eq(2).attr('src',res.data[0].Type3_src3);
+                        $('section img').eq(3).attr('src',res.data[0].Type3_src4);
+                    }
+                }
+
+            })
+        })
+        var userId='';
+        function nav(){
+            if(window.location.search.match(/(?<=uid=)\d+/).length){
+                userId=window.location.search.match(/(?<=uid=)\d+/)[0];
+                console.log(userId);
+                $('.reg-login').html('退出登录')
+            }
+            $('.reg-login').click(function(){
+                window.location.href=`./login.html`;
+            });
+            $('.video-class').click(function(){
+                window.location.href=`./classtype1.html?uid=${userId}`;
+            });
+            $('.shop-mall').click(function(){
+                window.location.href=`./shoplist.html?uid=${userId}`;
+            });
+            $('.community-page').click(function(){
+                window.location.href=`./community.html?uid=${userId}`;
+            });
+            $('.shop-car').click(function(){
+                window.location.href=`./shoppingtrolley.html?uid=${userId}`;
+            });
+            $('.penson-center').click(function(){
+                window.location.href=`./mine.html?uid=${userId}`;
+            });
+            $('.return-index').click(function(){
+                window.location.href=`./index.html?uid=${userId}`;
+            });
+        };
+        nav();
+
+    })
+
+</script>
+</html>

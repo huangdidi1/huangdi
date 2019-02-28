@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+<link rel="stylesheet" href="../css/index.css">
+<link rel="stylesheet" href="../css/swiper.min.css">
+<script src="../dist/swiper.min.js"></script>
+</head>
+<body>	
+	<div class="index-radio">
+			<div id="index-nav">
+					<h1><img src="../images/logo1.png" alt=""></h1>
+				<ul>
+					
+					<li>视频教学</li>
+					<li>商城</li>
+					<li>社区论坛</li>
+					
+				</ul>
+				<p>注册/登录</p>
+			</div>
+		<div class="index-automesssage">
+			<p>哪有什么天生如此&nbsp只是我们每天坚持</p>
+			<p></p>
+			<img src="../images/beijin2.png" alt="">
+		
+			</div>
+	
+	</div>
+	
+	<div class="index-part1">
+		<h2>量体裁衣 & 多种健身训练供你选择</h2>
+		<p>	训练计划针对不同人群、各种器械和阶段健身
+			目标组合编排，适用最广泛的健身场景。</p>
+	</div>
+	<div class="index-teach">
+			<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="../images/01.png" alt=""></div>
+						<div class="swiper-slide"><img src="../images/02.png" alt=""></div>
+						<div class="swiper-slide"><img src="../images/03.png" alt=""></div>
+					</div>
+						<!-- 如果需要分页器 -->
+						<div class="swiper-pagination"></div>
+				
+						<!-- 如果需要导航按钮 -->
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
+					
+			</div>
+			<div class="index-teach-message">
+				<h3>真人同步训练记录训练进度</h3>
+				<p>全程语音督导，自动同步进度，不需要背动作
+					、记组数，跟着 我们 马上练起来。</p>
+					<button>更多视频</button>
+			</div>
+	</div>
+	<div class="index-part2">
+		<h2>品牌装备 & 商城，伴你尽兴挥汗</h2>
+		<p>训练计划针对不同人群、各种器械和阶段健身
+			目标组合编排，适用最广泛的健身场景</p>
+			
+	</div>
+	<div class="index-shop">
+		<div class="index-shop-div0"><img src="../images/shop1.jpg" alt=""></div>
+		<!-- <div class="index-shop-div1">
+		<h4>	KeepUp</h4>
+		<p>全新运动服饰品牌</p>
+			<img src="../images/12.jpeg" alt=""></div>
+		<div class="index-shop-div2">
+				<h4>跑步骑行</h4>
+				<p>专业级别的运动装备</p>
+			<img src="../images/12.jpeg" alt=""></div>
+		<div class="index-shop-div3">
+				<h4>瑜伽伸展</h4>
+				<p>让每个动作更标准</p>
+			<img src="../images/12.jpeg" alt=""></div>
+		<div class="index-shop-div4">
+				<h4>课程同款</h4>
+				<p>跟着课程动起来</p>
+			<img src="../images/12.jpeg" alt=""></div> -->
+		<div class="index-shop-div5"><img src="../images/07.png" alt=""></div>
+		<div class="index-shop-div6">
+			<h3>跟 着 跑 就 对 了</h3>
+			<p>科技互联的运动新装备
+				专注于家庭与个人的运动新体验
+				带给你有效果的运动方式</p>
+				<button>进入商城</button>
+		</div>
+	</div>
+	<div class="index-part3">
+			<h2>品牌装备 & 商城，伴你尽兴挥汗</h2>
+			<p>训练计划针对不同人群、各种器械和阶段健身
+				目标组合编排，适用最广泛的健身场景</p>
+	</div>
+	<div class="index-community">
+		<div class="index-community-div1"><img src="../images/08.png" alt=""></div>
+		<div class="index-community-div2"><img src="../images/10.png" alt=""></div>
+		<div class="index-community-div3"><img src="../images/11.png" alt=""></div>
+		<div class="index-community-div4"><img src="../images/08.png" alt=""></div>
+		<div class="index-community-div5"><img src="../images/10.png" alt=""></div>
+		<div class="index-community-div6"><img src="../images/11.png" alt=""></div>
+		<div class="index-community-div7">
+			<h3>千万用户伴你训练</h3>
+			<p>Calorie 希望创造一个专业、有趣的健身社区，
+				在这里你会找到渴望共同进步的小伙伴。</p>
+				<button>进入社区</button>	
+		</div>
+	</div>
+	<div class="index-bottom">
+		<div>
+				<ul>
+						<li>关于我们</li>
+						<li>加入我们</li>
+						<li>用户协议</li>
+						<li>隐私政策</li>
+					</ul>
+					<ul>
+						<li>关于我们</li>
+						<li>加入我们</li>
+						<li>用户协议</li>
+						<li>隐私政策</li>
+					</ul>
+
+		    
+		</div>
+		<div class="index-bottom-b">
+				<p class="p1">Copyright © 2018 Calorie. All rights reserved.</p>
+				<p class="p2">联系方式QQ：2630929821  ICP备案：闽ICP备14009881号-5</p>
+		</div>
+
+	
+	</div>
+	<div class="index-service"><img src="../images/客服3.png" alt=""></div>
+	<div class="index-backto-top"><img src="../images/回到顶部1.png" alt=""></div>
+
+
+
+</body>
+<script>
+	var mySwiper = new Swiper ('.swiper-container', {
+    direction: 'horizontal', // 垂直切换选项
+    loop: true, // 循环模式选项	
+	pagination: {
+      el: '.swiper-pagination',
+    },
+	effect: 'coverflow',
+	
+	grabCursor: true, 
+    // cubeEffect: { 
+    //     shadow: false, //是否显示投影 
+    //     slideShadows: true, //是否显示slide阴影 
+    //     shadowOffset: 20, //投影距离 
+    //     shadowScale: 0.94, //投影缩放比例 
+    // }, 
+	coverflowEffect:{
+		rotate:50,//slide做3d旋转时Y轴的旋转角度。
+stretch:0,//每个slide之间的拉伸值，越大slide靠得越紧。 默认0。
+depth:100,//slide的位置深度。值越大z轴距离越远，看起来越小。 默认100。
+modifier:1//depth和rotate和stretch的倍率，相当于depth*modifier、rotate*modifier、stretch*modifier，值越大这三个参数的效果越明显。默认1。
+// slideShadows：开启slide阴影。默认 true。
+	},
+	
+    // 如果需要前进后退按钮
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+	box:{
+
+rows: 6, // 切割行
+
+cols: 3 // 切割列
+
+},
+});
+</script>
+</html>

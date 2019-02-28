@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./../css/register.css">
+</head>
+<body>
+<header class="clearfix">
+    <h1 class="return-index"><img class="logo" src="../images/shoppingmall/logo1.png" alt="">Calorie</h1>
+    <ul class="sel-page clearfix">
+        <li><a class="video-class" href="javascript:;">视频教学</a></li>
+        <li><a class="shop-mall" href="javascript:;">商城</a></li>
+        <li><a class="community-page" href="javascript:;">社区论坛</a></li>
+    </ul>
+    <!--<ul class="login-jump clearfix">-->
+    <!--<li><a class="reg-login" href="">注册/登录</a></li>-->
+    <!--<li>-->
+    <!--<div class="person-center-img">-->
+    <!--</div>-->
+    <!--<a class="person-center" href="javascript:;">个人中心</a>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<img src="../images/shoppingmall/购物车.png" alt="">-->
+    <!--<a  class="shop-car" href="javascript:;">购物车</a>-->
+    <!--</li>-->
+    <!--</ul>-->
+</header>
+<!--<img src="./../images/djw/1.png" alt="">-->
+    <div class="header">
+        <div class="logo">
+            <h1>卡路里</h1>
+        </div>
+    </div>
+    <h3>欢迎来到卡路里!请完善您的信息</h3>
+    <div class="name">
+        <label>昵称:</label>
+        <input type="text" placeholder="请输入您的昵称" maxlength="6">
+        <span class="green">* 昵称由字母数字汉字下划线组成,2-6位。</span>
+    </div>
+    <div class="user">
+        <label>账号:</label>
+        <input type="text" placeholder="请输入您的账号" maxlength="16">
+        <span></span>
+    </div>
+    <div class="pass">
+        <label>密码:</label>
+        <input type="password" placeholder="请输入您的密码" maxlength="16">
+        <span></span>
+    </div>
+    <div class="againpass">
+        <label>再次确认密码:</label>
+        <input type="password" placeholder="请再次确认您的密码" maxlength="16">
+        <span></span>
+    </div>
+    <div class="code">
+        <label>验证码:</label>
+        <input type="text" placeholder="验证码" id="inp1" maxlength="4">
+        <input type="button" title='点击更换验证码' id="inp2">
+        <span>看不清?<a href="javascript:;">换一张</a></span>
+    </div>
+    <button class="sure">
+        提交并登陆
+    </button>
+    <div id="tip">
+        <div class="big">
+            <h4>信息提示<a href="javascript:;">×</a></h4>
+            <div class="mid">
+                <p></p>
+            </div>
+            <div class="bot">
+                <div>
+                    <a href="javascript:;">确定</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./../dist/jquery-3.3.1.js"></script>
+<script src="./../javascript/register.js"></script>
+</html>

@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  list-style: none;
+}
+body {
+  background-color: #FAFAFA;
+}
+body button {
+  outline: none;
+  background-color: white;
+  border: 1px solid #24c789;
+  color: #24c789;
+  border-radius: 20px;
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  margin-left: 20px;
+  margin-top: -2px;
+}
+body header {
+  width: 1349px;
+  height: 74px;
+}
+body header h1 {
+  font-size: 30px;
+  width: 160px;
+  height: 74px;
+  float: left;
+  margin-left: 30px;
+}
+body header a {
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+}
+body header .sel-page {
+  width: 600px;
+  float: left;
+  margin-left: 60px;
+  height: 74px;
+}
+body header .sel-page li {
+  text-align: center;
+  float: left;
+  width: 200px;
+  line-height: 74px;
+}
+body header .sel-page li a:hover {
+  color: #1e97a2;
+  font-weight: 600;
+}
+body header .login-jump {
+  width: 480px;
+  height: 74px;
+  float: right;
+}
+body header .login-jump li {
+  text-align: center;
+  float: left;
+  width: 140px;
+  line-height: 74px;
+}
+body header .login-jump li img {
+  width: 25px;
+  height: 25px;
+}
+body header .login-jump li .person-center-img {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: url('../images/shoppingmall/个人中心.png');
+  background-size: 100% 100%;
+  position: relative;
+  top: 5px;
+  left: 0;
+  border-radius: 50%;
+}
+body header .login-jump li a:hover {
+  color: #1e97a2;
+  font-weight: 600;
+}
+body button:hover {
+  color: white;
+  background-color: #24c789;
+}
+#c-video {
+  display: block;
+  width: 720px;
+  height: 720px;
+  margin: 30px auto;
+}
+.c-change {
+  color: white;
+  background-color: #24c789;
+}
+#c-div {
+  width: 720px;
+  margin: 80px auto;
+}
+#c-div h2 {
+  display: inline-block;
+  line-height: 20px;
+}
+#c-div ul {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+#c-div li {
+  color: #2f2d2b;
+  margin-left: 10px;
+  font-size: 13px;
+  font-weight: 100;
+  height: 25px;
+  line-height: 25px;
+}
+#c-div p {
+  font-size: 12px;
+  color: #2f2d2b;
+  font-weight: bold;
+  margin-top: 30px;
+}
+#c-div img {
+  margin-top: 20px;
+}
+#c-div div img {
+  margin-top: 80px;
+  margin-left: 60px;
+}

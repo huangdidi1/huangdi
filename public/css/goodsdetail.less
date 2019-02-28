@@ -1,0 +1,339 @@
+@fontSize:15px;//默认字体
+@fontColor:#333;//默认字体颜色：
+@btn_color:#24c789;//按钮颜色：
+@btn_hoverColor:#24c789;//按钮移入颜色：
+@btn_hoverFontColor:#fff;//按钮移入字体颜色：
+@btn_border:1px solid #24c789;//按钮边框：
+@btn_radius:5px;//按钮的幅度：
+@navHoverColor:#1e97a2;//导航栏移入颜色：
+@bgColor:#FAFAFA;//背景颜色：
+@borderStyle:1px solid #1e97a2;//边框样式
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    outline: none;
+    text-align: center;
+    border: none;
+    font-size: @fontSize;
+    color: @fontColor;
+    font-style: normal;
+}
+html,body{
+    width: 1349px;
+    background-color: @bgColor;
+    // overflow: hidden;
+}
+header{
+    width: 1349px;
+    height: 74px;
+    h1{
+        font-size: 30px;
+        width: 160px;
+        height: 74px;
+        float: left;
+        margin-left: 30px;
+    }
+    a{
+        text-decoration: none;
+        color: @fontColor;
+        font-size: @fontSize;
+        
+    }
+    .sel-page{
+        width: 600px;
+        float: left;
+        margin-left: 60px;
+        height: 74px;
+        li{
+            text-align: center;
+            float: left;
+            width: 200px;
+            line-height: 74px;
+            a{
+                &:hover{
+                    color: @navHoverColor;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    .login-jump{
+        width: 480px;
+        height: 74px;
+        float: right;
+        li{
+            text-align: center;
+            float: left;
+            width: 140px;
+            line-height: 74px;
+            img{
+                width: 25px;
+                height: 25px;
+                // position: relative;
+                // top:5px;
+                // left: 0;
+            }
+            .person-center-img{
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                background: url('../images/shoppingmall/个人中心.png');
+                background-size: 100% 100%;
+                position: relative;
+                top:5px;
+                left: 0;
+                border-radius: 50%
+            }
+            a{
+                &:hover{
+                    color: @navHoverColor;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+.goods-wrap-box{
+    width: 75%;
+    background-color: #fff;
+    margin: 0 auto;
+    overflow: hidden;
+    .goods-detail-box{
+        margin-top: 50px;
+        width: 100%;
+        height: 550px;
+        .goods-show-box{
+            width: 45%;
+            height: 100%;
+            float: left;
+            .img-box{
+                margin-top: 10px;
+                height: 86px;
+                div{
+                    display: inline-block;
+                    &:hover{
+                        border: @borderStyle;
+                    }
+                    margin-left: 10px;
+                }
+            }
+            .goods-show-img{
+                width: 420px;
+                height: 420px;
+            }
+            .goods-sel-show-img{
+                width: 80px;
+                height: 80px;
+            }
+            p{
+                margin: 10px;
+                .col-goods{
+                    width: 100px;
+                    height: 40px;
+                    border: @borderStyle;
+                    background-color: rgb(252, 252, 252);
+                    color: #1e97a2;
+                    cursor: pointer;
+                }
+            }
+        }
+        .goods-describe-box{
+            width: 50%;
+            height: 100%;
+            float: right;
+            .goods-describe-name{
+                margin-top: 50px;
+                text-align: left;
+                font-size: 18px;
+                font-weight: 600;
+            }
+            .goods-price{
+                margin-top:20px;
+                text-align: left;
+                font-size: 18px;
+                font-weight: 600;
+                span{
+                    font-size: 20px;
+                    color: #f40;
+                }
+            }
+            .demarcation-line{
+                width: 70%;
+                height: 50px;
+                margin-top: 30px;
+                line-height: 50px;
+                border-top: @borderStyle;
+                border-bottom: @borderStyle;
+                span{
+                    margin:0 10px 0 10px;
+                    color: #ccc;
+                    i{
+                        font-style: normal;
+                        color: #ff0036;
+                    }
+                }
+            }
+            .goods-class{
+                margin-top: 20px;
+                text-align: left;
+            }
+            .goods-class-img{
+                margin-top: 20px;
+                text-align: left;
+                img{
+                    margin-right:10px; 
+                    width: 80px;
+                    height: 80px;
+                    cursor: pointer;
+                    // border: @borderStyle;
+                }
+            }
+            .goods-volume{
+                margin-top: 20px;
+                text-align: left;
+            }
+            .goods-sel-volume{
+                margin-top: 20px;
+                text-align: left;
+                span{
+                    color: #ccc;
+                    margin-left: 20px;
+                    i{
+                        color: rgb(175, 172, 172);
+                    }
+                }
+                button{
+                    width: 40px;
+                    height: 30px;
+                    border: @borderStyle;
+                    background-color: #fff;
+                    float: left;
+                    cursor: pointer;
+                }
+                .goods-sel-btn-num{
+                    width: 45px;
+                    height: 28px;
+                    float: left;
+                    border:@borderStyle;
+                    border-left: none;
+                    border-right: none;
+                }
+            }
+            .goods-sel-buy{
+                margin-top: 20px;
+                position: relative;
+                top: 0;
+                left: 0;
+                button{
+                    width: 120px;
+                    height: 40px;
+                    position: relative;
+                    left: -50px;
+                    top: 0;
+                    background-color: #fff;
+                    border:@borderStyle;
+                    color: #1e97a2;
+                    cursor: pointer;
+                }
+                .success{
+                    width: 120px;
+                    height: 40px;
+                    color: #1e97a2;
+                    display: none;
+                    font-weight: 600;
+                    font-size: 22px;
+                    position: absolute;
+                    left: 205px;
+                    top: -20px;
+                }
+                .add-to-cart{
+                    background-color: #1e97a2;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .goods-detail-comment{
+        width: 100%;
+        margin-top: 30px;
+        .goods-change-btn{
+            text-align: left;
+            width: 100%;
+            height: 40px;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            .active{
+                border-top: 2px solid #1e97a2;
+            }
+            button{
+                width: 100px;
+                height: 100%;
+                background-color: #fff;
+                border-bottom: 1px solid #ccc;
+                cursor: pointer;
+                span{
+                    color: #1e97a2;
+                }
+            }
+        }
+        .goods-detail-img-comment{
+            margin: 30px auto;
+            width: 80%;
+            img{
+                width: 100%;
+                float: left;
+            }
+            table{
+                width: 100%;
+                border-collapse: collapse;
+                tr{
+                    border-bottom: #ccc 1px solid;
+                }
+            }
+            .comment-box{
+                width: 100%;
+                // border-bottom: red 5px solid;
+                .comment-content{
+                    .text{
+                        margin-top:15px;
+                        margin-bottom:15px;
+                        text-align: left;
+                    }
+                    width: 60%;
+                    font-size: 13px;
+                    img{
+                        width: 40px;
+                        height: 40px;
+                        float: left;
+                        margin-left:5px; 
+                    }
+                    .comment-time{
+                        color: #ccc;
+                        margin-top: 10px;
+                        margin-bottom: 20px;
+                        text-align: left;
+                    }
+                }
+                .goods-class{
+                    width: 20%;
+                    font-size: 13px;
+                    span{
+                        font-size: 13px;
+                    }
+                    vertical-align: middle;
+                }
+                .user-name{
+                    width: 20%;
+                    font-size: 13px;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+}

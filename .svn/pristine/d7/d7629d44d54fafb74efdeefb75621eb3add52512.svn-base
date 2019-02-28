@@ -1,0 +1,84 @@
+/**
+ * Created by Administrator on 2018/12/6.
+ */
+var mysql = require('mysql');
+var db = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'root',
+    database: 'calorie'
+});
+var classModel={
+    //classtype1页面加载时
+        onload1:function (fn) {
+            var sql = 'SELECT *,COUNT(Type2_id) num FROM classtype1 LEFT JOIN classtype2 USING (Type1_id) WHERE Type1_type=1 GROUP BY Type1_id';
+            db.query(sql,function (err,data) {
+                fn(err,data);
+
+            })
+        },
+    onload2:function (fn) {
+        var sql = 'SELECT * FROM classtype1 WHERE Type1_type=2';
+        db.query(sql,function (err,data) {
+            fn(err,data);
+            console.log(data)
+        })
+    },
+    //2.classtype1 点击动作分类/点击更多分类
+        type11:function (id11,fn) {
+            var sql = 'SELECT * FROM classtype2 WHERE Type1_id='+ id11 + '';
+            db.query(sql,function (err,data) {
+                fn(err,data);
+            })
+        },
+        type12:function (id12,fn) {
+            var sql = 'SELECT * FROM classtype3 WHERE Type2_id=' + id12 + '';
+            db.query(sql,function (err,data) {
+                fn(err,data);
+            })
+        }, 
+        type2:function (id2,fn) {
+            var sql = 'SELECT * FROM classtype3 WHERE Type2_id=' + id2 + '';
+            db.query(sql,function (err,data) {
+                fn(err,data);
+            })
+        },
+    type1data:function (id,fn) {
+        var sql = 'SELECT * FROM classtype1 WHERE Type1_id=' + id + '';
+        db.query(sql,function (err,data) {
+            fn(err,data);
+        })
+    },
+    type2data:function (id,fn) {
+        var sql = 'SELECT * FROM classtype2 WHERE Type2_id=' + id + '';
+        db.query(sql,function (err,data) {
+            fn(err,data);
+        })
+    },
+    type3data:function (id,fn) {
+        var sql = 'SELECT * FROM classtype3 WHERE Type3_id=' + id + '';
+        db.query(sql,function (err,data) {
+            fn(err,data);
+        })
+    },
+    collect:function (uid,cid,fn) {
+            var sql='INSERT INTO collect2 VALUES(NULL,'+uid+','+cid+')';
+            db.query(sql,function (err,data) {
+
+                fn(err,data)
+        })
+    },
+    nocollect:function (uid,cid,fn) {
+            var sql='DELETE  FROM  collect2 WHERE u_id='+uid+' AND Type3_id='+cid+'';
+          db.query(sql,function (err,data) {
+            fn(err,data);
+        })
+    },
+    selectcollect:function (uid,cid,fn) {
+        var sql='SELECT * FROM  collect2 WHERE u_id='+uid+' AND Type3_id='+cid+'';
+        db.query(sql,function (err,data) {
+            fn(err,data);
+        })
+    }
+};
+module.exports=classModel;

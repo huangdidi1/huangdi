@@ -1,0 +1,448 @@
+@fontSize:15px;//默认字体
+@fontTitle:12px;
+@fontColor:#333;//默认字体颜色：
+@btn_color:#1e97a2;//按钮颜色：
+@btn_hoverColor:#1e97a2;//按钮移入颜色：
+@btn_hoverFontColor:#fff;//按钮移入字体颜色：
+@btn_border:1px solid #1e97a2;//按钮边框：
+@btn_radius:5px;//按钮的幅度：
+@navHoverColor:#1e97a2;//导航栏移入颜色：
+@bgColor:#FAFAFA;//背景颜色：
+@liWidth:356px;
+@liHeight:348px;
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.clearfix:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+body{
+  background: @bgColor;
+}
+@font-face{
+  font-family: 'iconfont';
+  src:url('../font/iconfont.ttf');
+}
+.iconfont{
+  font-family:"iconfont" ;
+  font-style:normal;
+  font-size: 16px;
+  line-height: 30px;
+  color: #b9b7be;
+  margin-left: 5px;
+}
+.iconfont1{
+  font-family:"iconfont" ;
+  font-style:normal;
+  font-size: 16px;
+  line-height: 30px;
+  color: #b9b7be;
+  margin-left: 20px;
+}
+header{
+  width: 1349px;
+  height: 74px;
+  h1{
+    font-size: 30px;
+    width: 160px;
+    height: 74px;
+    float: left;
+    margin-left: 30px;
+  }
+  a{
+    text-decoration: none;
+    color: @fontColor;
+    font-size: @fontSize;
+
+  }
+  .sel-page{
+    width: 600px;
+    float: left;
+    margin-left: 60px;
+    height: 74px;
+    li{
+      text-align: center;
+      float: left;
+      width: 200px;
+      line-height: 74px;
+      a{
+        &:hover{
+          color: @navHoverColor;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  .login-jump{
+    width: 480px;
+    height: 74px;
+    float: right;
+    li{
+      text-align: center;
+      float: left;
+      width: 140px;
+      line-height: 74px;
+      img{
+        width: 25px;
+        height: 25px;
+        // position: relative;
+        // top:5px;
+        // left: 0;
+      }
+      .person-center-img{
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        background: url('../images/shoppingmall/个人中心.png');
+        background-size: 100% 100%;
+        position: relative;
+        top:5px;
+        left: 0;
+        border-radius: 50%
+      }
+      a{
+        &:hover{
+          color: @navHoverColor;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+section{
+  .information{
+    width: 770px;
+    margin: 0 auto;
+    overflow: hidden;
+    cursor: pointer;
+    .top{
+      width: 100%;
+      height: 92px;
+      overflow: hidden;
+      background: white;
+      .hair{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        float: left;
+        margin-left: 20px;
+        margin-top: 20px;
+        box-shadow: 2px 2px 2px #999;
+      }
+      .user{
+        width: 456px;
+        height: 24px;
+        float: left;
+        color: @fontColor;
+        font-weight: bold;
+        margin-top: 26px;
+        margin-left: 20px;
+      }
+      .time{
+        width: 456px;
+        height: 16px;
+        font-size: 12px;
+        color: #999;
+        float: left;
+        margin-left: 20px;
+      }
+    }
+    .mid{
+      img{
+        width: 768px;
+        height: 576px;
+        margin-top: 10px;
+      }
+    }
+    .bottom{
+      width: 730px;
+      font-size: 14px;
+      line-height: 21px;
+      margin-top: 10px;
+      color: @fontColor;
+      padding: 20px;
+    }
+    .count{
+      width: 100%;
+      border-bottom: 1px solid #999;
+      span{
+        list-style: none;
+        color:#b9b7be;
+        margin-left: 3px;
+      }
+      u{
+        text-decoration: none;
+        color:#b9b7be;
+        margin-left: 3px;
+      }
+      strong{
+        margin-right: 20px;
+      }
+    }
+    .cont{
+      padding-left: 0;
+      margin-top: 3px;
+      cursor: pointer;
+      .single-reply{
+        margin-top: 15px;
+        margin-bottom: 15px;
+        .ui-avatar{
+          width: 30px;
+          height: 30px;
+          float: left;
+          border-radius: 100%;
+          margin-top: 3px;
+          margin-left: 5px;
+        }
+        .comments-content{
+          word-wrap:break-word;
+          float: left;
+          margin-top: -3px;
+          margin-left: 3px;
+          position: relative;
+          a{
+            font-size: 14px;
+            text-decoration: none;
+            float: left;
+            margin-left: 10px;
+            margin-right: 10px;
+          }
+          .em1{
+            float: right;
+            width: 600px;
+            font-style: normal;
+            font-size: 14px;
+            img{
+              width: 16px;
+              height: 16px;
+            }
+          }
+          .ri{
+            width: 100px;
+            height: 20px;
+            position: absolute;
+            top:12px;
+            left: 7px;
+            .em2{
+              font-size: 12px;
+              font-style: normal;
+            }
+            .i1{
+              display: none;
+              margin-left: 0;
+            }
+            .em3{
+              display: none;
+              margin-left: 0;
+            }
+          }
+        }
+      }
+      .comments-list{
+        ul{
+          li{
+            margin-left: 40px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            .single1-reply{
+              .ui-avatar{
+                width: 30px;
+                height: 30px;
+                float: left;
+                border-radius: 100%;
+                margin-top: 3px;
+                margin-left: 5px;
+              }
+              .comments-content{
+                word-wrap:break-word;
+                float: left;
+                margin-top: -3px;
+                margin-left: 3px;
+                position: relative;
+                .a1{
+                  font-size: 14px;
+                  text-decoration: none;
+                  float: left;
+                  margin-left: 10px;
+                  margin-right: 10px;
+                }
+                .i4{
+                  float: left;
+                  font-style: normal;
+                  font-size: 14px;
+                }
+                .a2{
+                  font-size: 14px;
+                  text-decoration: none;
+                  float: left;
+                  margin-left: 10px;
+                  margin-right: 10px;
+                }
+                .em7{
+                  float: right;
+                  width: 440px;
+                  font-style: normal;
+                  font-size: 14px;
+                  img{
+                    width: 16px;
+                    height: 16px;
+                  }
+                }
+                .ri1{
+                  width: 100px;
+                  height: 20px;
+                  position: absolute;
+                  top:12px;
+                  left: 7px;
+                  .em5{
+                    font-size: 12px;
+                    font-style: normal;
+                  }
+                  .i2{
+                    display: none;
+                    margin-left: 0;
+                  }
+                  .em4{
+                    display: none;
+                    margin-left: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .write{
+      .single{
+        margin-top: 10px;
+        width: 768px;
+        height: 36px;
+        border: 1px solid #999;
+        a{
+          color: #999;
+          font-size: 14px;
+          line-height: 36px;
+          margin-left: 10px;
+        }
+      }
+      .text{
+        display: none;
+        position: relative;
+        textarea{
+          width: 758px;
+          height: 72px;
+          border: 1px solid #999;
+          resize: none;
+          padding-left: 10px;
+        }
+        .div1{
+          width: 769px;
+          overflow: hidden;
+          position: relative;
+          img{
+            float: left;
+            margin-top: 4px;
+          }
+          .btn1{
+            width: 74px;
+            height: 27px;
+            background: @btn_hoverColor;
+            color: white;
+            float: right;
+            outline: none;
+            border: none;
+            margin-top: 2px;
+          }
+          .btn2{
+            display: none;
+            width: 74px;
+            height: 27px;
+            background: @btn_hoverColor;
+            color: white;
+            float: right;
+            outline: none;
+            border: none;
+            margin-top: 2px;
+          }
+          .btn3{
+            display: none;
+            width: 74px;
+            height: 27px;
+            background: @btn_hoverColor;
+            color: white;
+            float: right;
+            outline: none;
+            border: none;
+            margin-top: 2px;
+          }
+          .icon{
+            display: none;
+            margin-top: 30px;
+            width: 430px;
+            height: 258px;
+            border: 1px solid #e8e8e8;
+            box-shadow: 4px 5px 6px #999;
+            background: #fff;
+            border-radius: 3px;
+            cursor: pointer;
+            .new{
+              border: 8px solid white;
+              border-bottom-color: #cccccc;
+              position: absolute;
+              top: 23px;
+              left: 19px;
+              z-index: 4;
+            }
+            .icon1{
+              width: 373px;
+              height: 218px;
+              margin: 20px auto;
+              position: relative;
+              .close{
+                color: @fontColor;
+                width: 20px;
+                height: 20px;
+                text-align: center;
+                line-height: 20px;
+                position: absolute;
+                top: -17px;
+                right: -24px;
+                cursor: pointer;
+                &:hover{
+                  color: @btn_color;
+                }
+              }
+              ul{
+                li{
+                  width: 26px;
+                  height: 22px;
+                  border: 1px solid #e8e8e8;
+                  overflow: hidden;
+                  margin: -1px 0 0 -1px;
+                  padding: 4px 2px;
+                  text-align: center;
+                  float: left;
+                  img{
+                    width: 22px;
+                    height: 22px;
+                  }
+                  &:hover{
+                    border: @btn_border;
+                    background: #fff9ec;
+                    position: relative;
+                    z-index: 2;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

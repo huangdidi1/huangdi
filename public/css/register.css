@@ -1,0 +1,244 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  color: #333;
+  text-decoration: none;
+}
+body {
+  background: #FAFAFA;
+}
+label {
+  display: inline-block;
+  font-size: 16px;
+  min-width: 120px;
+  text-align: right;
+  margin-right: 16px;
+}
+input {
+  display: inline-block;
+  padding: 0 10px;
+  height: 30px;
+  font-size: 16px;
+  line-height: 1;
+  color: #777;
+  background: #FCFCFC;
+  border: 1px solid #CCC;
+  border-radius: 2px;
+  width: 250px;
+}
+.header {
+  width: 570px;
+  height: 76px;
+  border-bottom: 1px solid #ddd;
+  margin: 80px auto 30px;
+  text-align: center;
+}
+.header .logo {
+  width: 160px;
+  height: 50px;
+  background: url('../images/djw/49484165.png') no-repeat;
+  display: inline-block;
+}
+.header .logo h1 {
+  margin-left: 55px;
+}
+h3 {
+  text-align: center;
+}
+.red {
+  font-size: 13px;
+  color: red;
+}
+.green {
+  font-size: 13px;
+  color: green;
+}
+.name {
+  margin-top: 20px;
+  margin-left: 390px;
+}
+.user {
+  margin-top: 20px;
+  margin-left: 390px;
+}
+.user span {
+  visibility: hidden;
+}
+.pass {
+  margin-top: 20px;
+  margin-left: 390px;
+}
+.pass span {
+  visibility: hidden;
+}
+.againpass {
+  margin-top: 20px;
+  margin-left: 390px;
+}
+.againpass span {
+  visibility: hidden;
+}
+.code {
+  margin-top: 20px;
+  margin-left: 390px;
+}
+.code span {
+  font-size: 13px;
+}
+.code #inp1 {
+  width: 50px;
+}
+.code #inp2 {
+  width: 60px;
+  margin-left: 47px;
+  outline: 0;
+  vertical-align: middle;
+  background: antiquewhite;
+  color: green;
+}
+.code a {
+  color: #4c7cc6;
+}
+.code a:hover {
+  color: #73a3ed;
+  text-decoration: underline;
+}
+.sure {
+  width: 100px;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 531px;
+  background: #24c789;
+  color: #fff;
+  border: 1px solid #24c789;
+  border-radius: 2px;
+}
+.sure:hover {
+  opacity: 0.9;
+}
+#tip {
+  width: 100%;
+  height: 100%;
+  background: rgba(51, 51, 51, 0.6);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+#tip .big {
+  margin: -93px 0px 0px -251px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: block;
+  border: 1px solid #b0cb83;
+  width: 500px;
+  height: 180px;
+  background: #fff;
+  color: #666;
+}
+#tip .big h4 {
+  background: #1e97a2;
+  color: #fff;
+  font-size: 14px;
+  height: 35px;
+  line-height: 35px;
+  overflow: hidden;
+  padding: 0 10px;
+  border-bottom: 1px solid #1e97a2;
+}
+#tip .big h4 a {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ccff99;
+  float: right;
+}
+#tip .big .mid {
+  width: 100%;
+  height: 90px;
+}
+#tip .big .mid p {
+  line-height: 100px;
+  text-align: center;
+}
+#tip .big .bot {
+  width: 100%;
+  height: 55px;
+}
+#tip .big .bot div {
+  text-align: center;
+  line-height: 55px;
+}
+#tip .big .bot div a {
+  width: 106px;
+  height: 34px;
+  line-height: 34px;
+  background: #1e97a2;
+  border: 0;
+  color: #fff;
+  display: inline-block;
+  cursor: pointer;
+}
+header {
+  width: 1349px;
+  height: 74px;
+}
+header h1 {
+  font-size: 30px;
+  width: 160px;
+  height: 74px;
+  float: left;
+  margin-left: 30px;
+}
+header a {
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+}
+header .sel-page {
+  width: 600px;
+  float: left;
+  margin-left: 60px;
+  height: 74px;
+}
+header .sel-page li {
+  text-align: center;
+  float: left;
+  width: 200px;
+  line-height: 74px;
+}
+header .sel-page li a:hover {
+  color: #1e97a2;
+  font-weight: 600;
+}
+header .login-jump {
+  width: 480px;
+  height: 74px;
+  float: right;
+}
+header .login-jump li {
+  text-align: center;
+  float: left;
+  width: 140px;
+  line-height: 74px;
+}
+header .login-jump li img {
+  width: 25px;
+  height: 25px;
+}
+header .login-jump li .person-center-img {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: url('../images/shoppingmall/个人中心.png');
+  background-size: 100% 100%;
+  position: relative;
+  top: 5px;
+  left: 0;
+  border-radius: 50%;
+}
+header .login-jump li a:hover {
+  color: #1e97a2;
+  font-weight: 600;
+}

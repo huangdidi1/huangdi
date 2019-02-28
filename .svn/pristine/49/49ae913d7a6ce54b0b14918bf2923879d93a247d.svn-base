@@ -1,0 +1,40 @@
+var indexModel=require('./../model/indexModel.js');
+
+var indexController={
+	 
+  getName:function(req,res){
+            indexModel.getName(req.query.id,function(err,data){
+        if(err){
+          console.log(err)
+          console.log('我错了')
+        }else{ 
+          res.send({error:0,name:data[0].u_name});
+          // console.log({error:0,id:data.insertId})  
+             }
+    })
+  },
+ getVideoMsg:function(){},
+  getShopMsg:function(){},
+  getCommunityMsg:function(req,res){
+        indexModel.getCommunityMsg(function(err,data){
+          if(err){
+            console.log(err)
+          }else{
+            console.log(data[0].pi_img)
+            
+            res.send({error:0,data:data})
+          }
+        })
+  }
+
+
+  };
+
+ 
+
+
+
+
+
+
+module.exports=indexController;

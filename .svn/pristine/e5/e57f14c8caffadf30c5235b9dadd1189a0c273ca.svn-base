@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/goodsdetail.css">
+</head>
+<body>
+        <header><img src="../images/1.png" alt=""></header>
+        <section class="goods-wrap-box">
+            <div class="goods-detail-box clearfix">
+                <div class="goods-show-box">
+                    <img class="goods-show-img" src="../images/body-fat-scales/bfs-01/bfs-01-show-01.jpg" alt="">
+                    <img src="../images/body-fat-scales/bfs-01/bfs-01-show-01.jpg" alt="" class="goods-sel-show-img">
+                    <img src="../images/body-fat-scales/bfs-01/bfs-01-show-02.jpg" alt="" class="goods-sel-show-img">
+                    <img src="../images/body-fat-scales/bfs-01/bfs-01-show-03.jpg" alt="" class="goods-sel-show-img">
+                    <img src="../images/body-fat-scales/bfs-01/bfs-01-show-04.jpg" alt="" class="goods-sel-show-img">
+                    <p><span><i>&</i>收藏商品</span></p>
+                </div>
+                <div class="goods-describe-box">
+                    <p class="goods-describe-name">体脂秤称重减脂智能家用精准体重秤健康WiFi电子秤男女</p>
+                    <p class="goods-price">价格: <span>￥199</span></p>
+                    <div class="demarcation-line">
+                        <span class="goods-sale-volume">月销量: <i>9999</i></span>
+                        <span class="goods-sale-comment">累计评价: <i>9999</i></span>
+                        <span class="goods-sale-freight">运费: <i>包邮</i></span>
+                    </div>
+                    <p class="goods-class">颜色/规格:</p>
+                    <div class="goods-class-img">
+                        <img src="../images/body-fat-scales/bfs-01/bfs-01-color-01.jpg" alt="">
+                        <img src="../images/body-fat-scales/bfs-01/bfs-01-color-02.jpg" alt="">
+                        <img src="../images/body-fat-scales/bfs-01/bfs-01-color-03.jpg" alt="">
+                        <img src="../images/body-fat-scales/bfs-01/bfs-01-color-04.jpg" alt="">
+                    </div>
+                    <p class="goods-volume">选购数量:</p>
+                    <div class="goods-sel-volume clearfix">
+                        <button>-</button>
+                        <input type="text" class="goods-sel-btn-num" value="0">
+                        <button>+</button>
+                    </div>
+                    <div class="goods-sel-buy">
+                        <button class="just-buy">直接购买</button>
+                        <button class="add-to-cart">加入购物车</button>
+                    </div>
+                </div>
+            </div>
+            <div class="goods-detail-comment">
+                <div class="goods-change-btn">
+                    <button>商品详情</button>
+                    <button>累计评价<span>&nbsp;9999</span></button>
+                </div>
+                <div class="goods-detail-img-comment clearfix">
+                    <img src="../images/body-fat-scales/bfs-01/bfs-01-specification-01.jpg" alt="">
+                    <img src="../images/body-fat-scales/bfs-01/bfs-01-specification-02.jpg" alt="">
+                    <img src="../images/body-fat-scales/bfs-01/bfs-01-specification-03.jpg" alt="">
+                    <img src="../images/body-fat-scales/bfs-01/bfs-01-specification-04.jpg" alt="">
+                    <img src="../images/body-fat-scales/bfs-01/bfs-01-specification-05.jpg" alt="">
+                </div>
+            </div>
+        </section>
+</body>
+<script>
+    document.querySelector('.just-buy').onclick=function(){
+        window.location='./submit.html';
+    }
+</script>
+</html>

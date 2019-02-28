@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>训练课程-calorie</title>
+    <script src="../dist/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="../css/classtype1.css">
+</head>
+
+<body>
+<header class="clearfix">
+    <h1 class="return-index"><img class="logo" src="../images/shoppingmall/logo1.png" alt="">Calorie</h1>
+    <ul class="sel-page clearfix">
+        <li><a class="video-class" href="javascript:;">视频教学</a></li>
+        <li><a class="shop-mall" href="javascript:;">商城</a></li>
+        <li><a class="community-page" href="javascript:;">社区论坛</a></li>
+    </ul>
+    <ul class="login-jump clearfix">
+        <li><a class="reg-login" href="">注册/登录</a></li>
+        <li>
+            <div class="person-center-img">
+            </div>
+            <a class="person-center" href="javascript:;">个人中心</a>
+        </li>
+        <li>
+            <img src="../images/shoppingmall/购物车.png" alt="">
+            <a  class="shop-car" href="javascript:;">购物车</a>
+        </li>
+    </ul>
+</header>
+<section>
+<div id="c1-box1">
+    <p class="p1">课程分类</p>
+    <p>丰富的训练课程，规范你的训练过程</p>
+    <ul>
+        <!--<li index="1">
+        <a href="classtype2.html">
+        <div>
+        <p class="p2">burpees燃脂</p>
+        <p>x个课程</p>
+        </div>
+        <img src="./../images/class/classtype1/1burpees燃脂.png" alt="">
+        </a>
+        </li>-->
+        <!--<li><a href=""><div><p class="p2">burpees燃脂</p><p>x个课程</p></div><img src="./../images/class/classtype1/2天鹅颈瑜伽.jpg" alt=""></a></li>-->
+  </ul>
+    <p id="p1-1">没有想要的分类</p>
+    <button >全部课程</button>
+</div>
+<div id="c1-box2">
+        <p class="p1">动作库</p>
+        <p>动作的规范不但可以更高效的达到训练目的更能减少运动损伤</p>
+        <ul>
+            <!--<li><a href="actiontype2.html"><img src="./../images/class/动作库/颈部.png" alt=""><p>颈部</p></a></li>-->
+            <!--<li><a href=""><img src="./../images/class/动作库/臀部.png" alt=""><p>臀部</p></a></li>-->
+            <!--<li><a href=""><img src="./../images/class/动作库/背部.png" alt=""><p>背部</p></a></li>-->
+            <!--<li><a href=""><img src="./../images/class/动作库/胸部.png" alt=""><p>胸部</p></a></li>-->
+            <!--<li><a href=""><img src="./../images/class/动作库/腰部.png" alt=""><p>腰部</p></a></li>-->
+            <!--<li><a href=""><img src="./../images/class/动作库/颈部.png" alt=""><p>颈部</p></a></li>-->
+            <!--<li><a href=""><img src="./../images/class/动作库/臀部.png" alt=""><p>臀部</p></a></li>-->
+            <!--<li><a href=""><img src="./../images/class/动作库/背部.png" alt=""><p>背部</p></a></li>-->
+            <!--<li><a href=""><img src="./../images/class/动作库/胸部.png" alt=""><p>胸部</p></a></li>-->
+            <!--<li><a href=""><img src="./../images/class/动作库/腰部.png" alt=""><p>腰部</p></a></li>-->
+        </ul>
+    </div>
+</section>
+<footer></footer>
+</body>
+<script>
+//    var aLi1=document.querySelectorAll('#c1-box1 li');
+//    var aLi2=document.querySelectorAll('#c2-box2 li');
+$(function () {
+    $(document).ready(function () {
+        var uid=window.location.search.match(/(?<=uid=)\d+/)[0];
+        $.ajax({
+            url:'/classtype-onload1',
+            success:function (res) {
+                //返回数据：{error：0，data1{}，data2{}}
+                console.log(res.data)
+                if(!res.error){
+//                    $('#c1-box1 ul').append( '<li index="'+res.+'"><a href="../pages/classtype2.html?id='+res.data+'"><div><p class="p2">burpees燃脂</p><p>x个课程</p></div><img src="./../images/class/classtype1/1burpees燃脂.png" alt=""></a></li>')
+                    for(var i=0;i<40;i++){
+                        $('#c1-box1 ul').append('<li index="'+res.data[i].Type1_id+'"><a href="../pages/classtype2.html?uid='+uid+'&cid='+res.data[i].Type1_id+'"><div><p class="p2">'+res.data[i].Type1_name+'</p><p >'+res.data[i].num+'个课程</p></div><img src="'+res.data[i].Type1_src+'" alt=""></a></li>');
+
+                    }
+                }
+            }
+
+
+        });
+//       for(var i=0;i<40;i++){
+//           $.ajax({
+//               url:'/classtype1-1',
+//               data:{id:i+1},
+//               success:function (res1) {
+//                   console.log(res1.data)
+//                 console.log(i+1);
+//                   $('#p_'+i+1+'').html(''+res1.data.length+'个课程');
+//               }
+//           })
+//       };
+        $('#c1-box1 button').click(function () {
+            $('#p1-1').css('display','none');
+            $(this).css('display','none');
+            $.ajax({
+                url:'/classtype-onload1',
+                success:function (res) {
+                    if(!res.error){
+//                    $('#c1-box1 ul').append( '<li index="'+res.+'"><a href="../pages/classtype2.html?id='+res.data+'"><div><p class="p2">burpees燃脂</p><p>x个课程</p></div><img src="./../images/class/classtype1/1burpees燃脂.png" alt=""></a></li>')
+                        for(var i=40;i<res.data.length;i++){
+                            $('#c1-box1 ul').append( '<li index="'+res.data[i].Type1_id+'"><a href="../pages/classtype2.html?uid='+uid+'&cid='+res.data[i].Type1_id+'"><div><p class="p2">'+res.data[i].Type1_name+'</p><p>'+res.data[i].num+'个课程</p></div><img src="'+res.data[i].Type1_src+'" alt=""></a></li>')
+                        }
+                    }
+                }
+            })
+        });
+        $.ajax({
+            url:'/classtype-onload2',
+            success:function (res) {
+                if(!res.error){
+                    for(var i=0;i<res.data.length;i++){
+                        $('#c1-box2 ul').append( '<li index="'+res.data[i].Type1_id+'"><a href="../pages/actiontype2.html?uid='+uid+'&cid='+res.data[i].Type1_id+'"><img src="'+res.data[i].Type1_src+'" alt=""><p>'+res.data[i].Type1_name+'</p></a></li>');
+
+                    }
+                }
+            }
+        });
+
+    });
+    var userId='';
+    function nav(){
+        if(window.location.search.match(/(?<=uid=)\d+/).length){
+            userId=window.location.search.match(/(?<=uid=)\d+/)[0];
+            console.log(userId);
+            $('.reg-login').html('退出登录')
+        }
+        $('.reg-login').click(function(){
+            window.location.href=`./login.html`;
+        });
+        $('.video-class').click(function(){
+            window.location.href=`./classtype1.html?uid=${userId}`;
+        });
+        $('.shop-mall').click(function(){
+            window.location.href=`./shoplist.html?uid=${userId}`;
+        });
+        $('.community-page').click(function(){
+            window.location.href=`./community.html?uid=${userId}`;
+        });
+        $('.shop-car').click(function(){
+            window.location.href=`./shoppingtrolley.html?uid=${userId}`;
+        });
+        $('.penson-center').click(function(){
+            window.location.href=`./mine.html?uid=${userId}`;
+        });
+        $('.return-index').click(function(){
+            window.location.href=`./index.html?uid=${userId}`;
+        });
+    };
+    nav();
+})
+
+//    $('#c1-box1 li').click(function () {
+//      $.ajax({
+//          url:'/classtype1-1',
+//          data:{Type1_id:$(this).index()},
+//          success:function () {
+////            window.location.href='http://localhost:666/classtype1-1'
+//
+//
+//          }
+//          })
+//    }
+//)
+</script>
+</html>

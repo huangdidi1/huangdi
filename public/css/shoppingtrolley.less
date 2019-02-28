@@ -1,0 +1,251 @@
+@fontSize:15px;//默认字体
+@fontColor:#333;//默认字体颜色：
+@btn_color:#24c789;//按钮颜色：
+@btn_hoverColor:#24c789;//按钮移入颜色：
+@btn_hoverFontColor:#fff;//按钮移入字体颜色：
+@btn_border:1px solid #24c789;//按钮边框：
+@btn_radius:5px;//按钮的幅度：
+@navHoverColor:#1e97a2;//导航栏移入颜色：
+@bgColor:#FAFAFA;//背景颜色：
+@borderStyle:1px solid #1e97a2;//边框样式
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    outline: none;
+    text-align: center;
+    border: none;
+    font-size: @fontSize;
+    color: @fontColor;
+}
+html,body{
+    width: 1349px;
+    background-color: @bgColor;
+    // overflow: hidden;
+}
+html,body{
+    width: 1349px;
+    background-color: @bgColor;
+    // overflow: hidden;
+}
+header{
+    width: 1349px;
+    height: 74px;
+    h1{
+        font-size: 30px;
+        width: 160px;
+        height: 74px;
+        float: left;
+        margin-left: 30px;
+    }
+    a{
+        text-decoration: none;
+        color: @fontColor;
+        font-size: @fontSize;
+        
+    }
+    .sel-page{
+        width: 600px;
+        float: left;
+        margin-left: 60px;
+        height: 74px;
+        li{
+            text-align: center;
+            float: left;
+            width: 200px;
+            line-height: 74px;
+            a{
+                &:hover{
+                    color: @navHoverColor;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    .login-jump{
+        width: 480px;
+        height: 74px;
+        float: right;
+        li{
+            text-align: center;
+            float: left;
+            width: 140px;
+            line-height: 74px;
+            img{
+                width: 25px;
+                height: 25px;
+                // position: relative;
+                // top:5px;
+                // left: 0;
+            }
+            .person-center-img{
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                background: url('../images/shoppingmall/个人中心.png');
+                background-size: 100% 100%;
+                position: relative;
+                top:5px;
+                left: 0;
+                border-radius: 50%
+            }
+            a{
+                &:hover{
+                    color: @navHoverColor;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+.shop-trolley-wrap-box{
+    width: 75%;
+    background-color: #fff;
+    margin: 0 auto;
+    overflow: hidden;
+    .shop-trolley-title{
+        width: 100%;
+        height: 50px;
+        text-align: left;
+        font-size: 20px;
+        line-height: 50px;
+        font-weight: 600;
+        margin-top: 50px;
+        border-bottom: @borderStyle;
+    }
+    .shop-trolley-goods-title{
+        width: 100%;
+        height: 50px;
+        margin: 30px 0;
+        li{
+            width: 15%;
+            height: 50px;
+            line-height: 50px;
+            float: left;
+        }
+        .goods-detail{
+            width: 40%
+        }
+    }
+    .shop-trolley-goods-list{
+        width: 100%;
+        margin-bottom: 20px;
+        ul{
+            margin-bottom: 30px;
+        }
+        li{
+            font-size: 14px;
+            width: 15%;
+            float: left;
+            div{
+                width: 100%;
+                margin-left: 15px;
+                button{
+                    width: 40px;
+                    height: 30px;
+                    border: @borderStyle;
+                    background-color: #fff;
+                    float: left;
+                    cursor: pointer;
+                }
+                .goods-sel-btn-num{
+                    width: 45px;
+                    height: 28px;
+                    float: left;
+                    border:@borderStyle;
+                    border-left: none;
+                    border-right: none;
+                }
+            }
+            
+        }
+        .single-goods-detail{
+            width: 40%;
+            div{
+                float: left;
+                margin: 0;
+            }
+            .single-goods-detail-sel{
+                width: 10%;
+                height: 80px;
+                line-height: 80px;
+                input{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            .single-goods-detail-img{
+                width: 20%;
+                img{
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+            .single-goods-detail-describe{
+                width: 50%;
+                text-align: left;
+            }
+            .single-goods-detail-class{
+                width: 20%;
+            }
+        }
+        .single-goods-price{
+            font-weight: 600;
+        }
+        .single-goods-sum{
+            font-weight: 600;
+            color: #f40;
+        }
+    }
+    .shop-trolley-goods-sum{
+        width: 100%;
+        height: 50px;
+        margin: 30px 0;
+        li{
+            width: 15%;
+            height: 50px;
+            line-height: 50px;
+            float: left;
+            div{
+                float: left;
+                text-align: center;
+            }
+            span{
+                font-weight: 600;
+            }
+            .goods-sum-all-sel{
+                width: 20%;
+                input{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            .goods-sum-total{
+                text-align: left;
+                width: 80%;
+            }
+        }
+        .goods-detail{
+            width: 40%
+        }
+        .goods-sum-price{
+            font-weight: 600;
+            span{
+                color: #f40;
+            }
+        }
+        .goods-sum-submit{
+            button{
+                width: 100%;
+                height: 100%;
+                background-color: @navHoverColor;
+                color: #fff;
+            }
+        }
+    }
+}

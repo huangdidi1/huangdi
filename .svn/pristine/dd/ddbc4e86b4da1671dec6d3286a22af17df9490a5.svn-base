@@ -1,0 +1,36 @@
+var mysql=require('mysql');
+var db=mysql.createConnection({
+host:'localhost',
+user:'root',
+password:'root',
+database:'calorie'
+});
+
+var indexModel={
+   getName:function(id,fn){
+	
+      var sql='SELECT u_name FROM users WHERE u_id="'+id+'";';
+       db.query(sql,function(err,data){
+		  fn(err,data)
+       })
+   },
+
+   getVideoMsg:function(){},
+   getShopMsg:function(fn){
+       var sql=''
+   },
+   getCommunityMsg:function(fn){
+      var sql='SELECT pi_img FROM pushimg LIMIT 0,6 ;';
+      db.query(sql,function(err,data){
+         fn(err,data)
+      })
+   }
+
+
+}
+
+   
+
+
+
+module.exports=indexModel;

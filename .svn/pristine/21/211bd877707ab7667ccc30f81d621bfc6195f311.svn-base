@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/shoplist.css">
+</head>
+<body>
+    <header><img src="../images/1.png" alt=""></header>
+    <section class="wrap-box">
+        <div class="screen-box clearfix">
+            <div class="sel-box">
+                <button>推荐</button>
+                <button> <span>分类</span> 
+                    <ul class="class-list">
+                        <li>健身</li>
+                        <li>护具</li>
+                        <li>体脂秤</li>
+                        <li>瑜伽</li>
+                    </ul>
+                </button>
+                <button>价格</button>
+                <button>新品</button>
+            </div>
+            <div class="search-box">
+                <input type="text">
+                <button>搜索</button>
+            </div>
+        </div>
+        <div class="shop-list-wrap-box clearfix">
+            <!-- <div class="shop-list-goods">
+                <div>
+                    <img src="../images/body-fat-scales/bfs-01/bfs-01-show-01.jpg" alt="">
+                    <span>￥199</span>
+                    <p><a href="../pages/goodsdetail.html">体脂秤称重减脂智能家用精准体重秤健康WiFi电子秤男女 </a></p>
+                    <p>
+                        <span class="shop-list-sale-volume">总销量：9999</span>|
+                        <span class="shop-list-sale-comment">评价：9999</span>
+                    </p>
+                </div>
+            </div> -->
+            <!-- <div class="shop-list-goods">
+                    <div>
+                        <img src="../images/body-fat-scales/bfs-01/bfs-01-show-01.jpg" alt="">
+                        <span>￥199</span>
+                        <p><a href="../pages/goodsdetail.html">体脂秤称重减脂智能家用精准体重秤健康WiFi电子秤男女 </a></p>
+                        <p>
+                            <span class="shop-list-sale-volume">总销量：9999</span>|
+                            <span class="shop-list-sale-comment">评价：9999</span>
+                        </p>
+                    </div>
+                </div>
+            <div class="shop-list-goods">
+                    <div>
+                        <img src="../images/body-fat-scales/bfs-01/bfs-01-show-01.jpg" alt="">
+                        <span>￥199</span>
+                        <p><a href="../pages/goodsdetail.html">体脂秤称重减脂智能家用精准体重秤健康WiFi电子秤男女 </a></p>
+                        <p>
+                            <span class="shop-list-sale-volume">总销量：9999</span>|
+                            <span class="shop-list-sale-comment">评价：9999</span>
+                        </p>
+                    </div>
+            </div>
+            <div class="shop-list-goods">
+                    <div>
+                        <img src="../images/body-fat-scales/bfs-01/bfs-01-show-01.jpg" alt="">
+                        <span>￥199</span>
+                        <p><a href="../pages/goodsdetail.html">体脂秤称重减脂智能家用精准体重秤健康WiFi电子秤男女 </a></p>
+                        <p>
+                            <span class="shop-list-sale-volume">总销量：9999</span>|
+                            <span class="shop-list-sale-comment">评价：9999</span>
+                        </p>
+                    </div>
+            </div>
+            <div class="shop-list-goods">
+                    <div>
+                        <img src="../images/body-fat-scales/bfs-01/bfs-01-show-01.jpg" alt="">
+                        <span>￥199</span>
+                        <p><a href="../pages/goodsdetail.html">体脂秤称重减脂智能家用精准体重秤健康WiFi电子秤男女 </a></p>
+                        <p>
+                            <span class="shop-list-sale-volume">总销量：9999</span>|
+                            <span class="shop-list-sale-comment">评价：9999</span>
+                        </p>
+                    </div>
+            </div>
+            <div class="shop-list-goods">
+                    <div>
+                        <img src="../images/body-fat-scales/bfs-01/bfs-01-show-01.jpg" alt="">
+                        <span>￥199</span>
+                        <p><a href="../pages/goodsdetail.html">体脂秤称重减脂智能家用精准体重秤健康WiFi电子秤男女 </a></p>
+                        <p>
+                            <span class="shop-list-sale-volume">总销量：9999</span>|
+                            <span class="shop-list-sale-comment">评价：9999</span>
+                        </p>
+                    </div>
+            </div>
+            <div class="shop-list-goods">
+                    <div>
+                        <img src="../images/body-fat-scales/bfs-01/bfs-01-show-01.jpg" alt="">
+                        <span>￥199</span>
+                        <p><a href="../pages/goodsdetail.html">体脂秤称重减脂智能家用精准体重秤健康WiFi电子秤男女 </a></p>
+                        <p>
+                            <span class="shop-list-sale-volume">总销量：9999</span>|
+                            <span class="shop-list-sale-comment">评价：9999</span>
+                        </p>
+                    </div>
+            </div>
+            <div class="shop-list-goods">
+                    <div>
+                        <img src="../images/body-fat-scales/bfs-01/bfs-01-show-01.jpg" alt="">
+                        <span>￥199</span>
+                        <p><a href="../pages/goodsdetail.html">体脂秤称重减脂智能家用精准体重秤健康WiFi电子秤男女 </a></p>
+                        <p>
+                            <span class="shop-list-sale-volume">总销量：9999</span>|
+                            <span class="shop-list-sale-comment">评价：9999</span>
+                        </p>
+                    </div> 
+            </div>  -->
+            <% for(var i=0;i<data1.length;i++) {%>
+                    
+                        <div class="shop-list-goods">
+                            <div>
+                                <img src="<%= data1[i].s_showimg %>" alt="">
+                                <span>￥199</span>
+                                <p><a href="../pages/goodsdetail.html">体脂秤称重减脂智能家用精准体重秤健康WiFi电子秤男女 </a></p>
+                                <p>
+                                    <span class="shop-list-sale-volume">总销量：<%= data1[i].s_salevolume %></span>|
+                                    <span class="shop-list-sale-comment">评价：9999</span>
+                                </p>
+                            </div>
+                        </div>
+                    <% } %>
+        </div>
+        <div class="page-box clearfix">
+            <div class="page-btn-box">
+                <button>&lt;</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>&gt;</button>
+            </div>
+        </div>
+        
+    </section>
+</body>
+</html>

@@ -1,0 +1,266 @@
+var mysql=require('mysql');
+
+var db=mysql.createConnection({
+    host:'localhost',
+    user:'root',
+    password:'root',
+    database:'calorie'
+});
+
+var shoplistModel={
+    getGoodsList:function (fn) {
+        var sql=`SELECT *
+        FROM
+        (SELECT s_id,ss_price,s_name,s_type,s_uptime,s_showimg,s_salevolume,COUNT(sc_id) comment_sum
+        FROM shop 
+        LEFT JOIN shop_comment 
+        USING (s_id) 
+        LEFT JOIN shop_spec 
+        USING (s_id) 
+        GROUP BY sc_id
+        ) shop_list
+        GROUP BY s_id
+        ORDER BY s_salevolume DESC`;
+        // var sql='SELECT *,COUNT(sc_id) comment_sum FROM shop LEFT JOIN shop_comment USING (s_id) LEFT JOIN shop_spec USING (s_id) GROUP BY s_id ORDER BY s_salevolume DESC';
+        db.query(sql,function (err,data) {
+            fn(err,data);
+        })
+    },
+    getGoodsPrice:function (fn) {
+        var sql=`SELECT *
+        FROM
+        (SELECT s_id,ss_price,s_name,s_type,s_uptime,s_showimg,s_salevolume,COUNT(sc_id) comment_sum
+        FROM shop 
+        LEFT JOIN shop_comment 
+        USING (s_id) 
+        LEFT JOIN shop_spec 
+        USING (s_id) 
+        GROUP BY sc_id
+        ) shop_list
+        GROUP BY s_id
+        ORDER BY ss_price DESC`;
+        db.query(sql,function (err,data) {
+            fn(err,data);
+        })
+    },
+    getGoodsTime:function (fn) {
+        var sql=`SELECT *
+        FROM
+        (SELECT s_id,ss_price,s_name,s_type,s_uptime,s_showimg,s_salevolume,COUNT(sc_id) comment_sum
+        FROM shop 
+        LEFT JOIN shop_comment 
+        USING (s_id) 
+        LEFT JOIN shop_spec 
+        USING (s_id) 
+        GROUP BY sc_id
+        ) shop_list
+        GROUP BY s_id
+        ORDER BY s_uptime DESC`;
+        db.query(sql,function (err,data) {
+            fn(err,data);
+        })
+    },
+    getGoodsType:function (type,fn) {
+        var sql=`SELECT *
+        FROM
+        (SELECT s_id,ss_price,s_name,s_type,s_uptime,s_showimg,s_salevolume,COUNT(sc_id) comment_sum
+        FROM shop 
+        LEFT JOIN shop_comment 
+        USING (s_id) 
+        LEFT JOIN shop_spec 
+        USING (s_id)
+        WHERE s_type='${type}'
+        GROUP BY sc_id
+        ) shop_list
+        GROUP BY s_id
+        ORDER BY s_uptime DESC`;
+        db.query(sql,function (err,data) {
+            fn(err,data);
+        })
+    },
+    getGoodsSearch:function (name,fn) {
+        var sql=`SELECT *
+        FROM
+        (SELECT s_id,ss_price,s_name,s_type,s_uptime,s_showimg,s_salevolume,COUNT(sc_id) comment_sum
+        FROM shop 
+        LEFT JOIN shop_comment 
+        USING (s_id) 
+        LEFT JOIN shop_spec 
+        USING (s_id)
+        WHERE s_name
+        LIKE '%${name}%'
+        GROUP BY sc_id
+        ) shop_list
+        GROUP BY s_id
+        ORDER BY s_uptime DESC`;
+        db.query(sql,function (err,data) {
+            fn(err,data);
+        })
+    },
+    getGoodsDetail:function (id,fn) {
+        var sql=`SELECT *
+        FROM shop_detail
+        WHERE s_id=${id}`;
+        db.query(sql,function (err,data) {
+            fn(err,data);
+        })
+    },
+    getThisDetail:function (id,fn) {
+        var sql=`SELECT *,COUNT(sc_id) comment_sum
+        FROM shop
+        LEFT JOIN shop_comment
+        USING (s_id)
+        LEFT JOIN shop_spec
+        USING (s_id)
+        WHERE s_id=${id}
+        GROUP BY ss_color`;
+        db.query(sql,function (err,data) {
+            fn(err,data);
+        })
+    },
+    getComment:function (id,fn) {
+        var sql=`SELECT sc_id,sc_content,ss_color,sc_time,u_name
+        FROM shop_comment
+        LEFT JOIN users
+        USING(u_id)
+        LEFT JOIN shop_spec
+        USING(ss_id)
+        WHERE shop_comment.s_id=${id}`;
+        db.query(sql,function (err,data) {
+            fn(err,data);
+        })
+    },
+    getCommentImg:function (id,fn) {
+        var sql=`SELECT sc_id,sci_img
+        FROM shop_comment
+        LEFT JOIN shop_commentimg
+        USING(sc_id)
+        WHERE s_id=${id}`;
+        db.query(sql,function (err,data) {
+            fn(err,data);
+        })
+    },
+    addCart:function (gid,uid,num,color,fn) {
+        // console.log(gid,uid,num,color)
+        var sql=`INSERT INTO shop_cart VALUES(NULL,'${gid}','${uid}','${num}','${color}');`;
+        db.query(sql,function (err,data) {
+            fn(err,data);
+        })
+    },
+    getCart:function (uid,fn) {
+        var sql=`SELECT sca_id,s_showimg,s_id,s_name,shop_cart.ss_color,ss_price,goods_num
+        FROM shop_cart
+        LEFT JOIN shop
+        USING(s_id)
+        LEFT JOIN shop_spec
+        USING(s_id)
+        WHERE ${uid}
+        GROUP BY sca_id`;
+        db.query(sql,function (err,data) {
+            fn(err,data);
+        })
+    },
+    addOrder:function (ofNum,uid,scaId,ofPrice,fn) {
+        for(var i=0;i<scaId.length;i++){
+            var sql=`INSERT INTO order_form VALUES(NULL,'${ofNum}','${uid}','${scaId[i].scaid}','${scaId[i].goodsNum}','${ofPrice}',DEFAULT);`;
+            db.query(sql,function (err,data) {
+                if(i==scaId.length-1){
+                    fn(err,data);
+                }
+            })
+        }
+    },
+    getOrder:function (uid,ofNum,fn) {
+        var sql=`SELECT sca_id,s_id,s_showimg,s_name,shop_cart.ss_color,ss_price,order_form.goods_num,of_num
+        FROM shop_cart
+        LEFT JOIN shop
+        USING(s_id)
+        LEFT JOIN shop_spec
+        USING(s_id)
+        LEFT JOIN order_form
+        USING (sca_id)
+        WHERE of_num=${ofNum}
+        GROUP BY sca_id`;
+        db.query(sql,function (err,data) {
+            fn(err,data);
+        })
+    },
+    getAddress:function (uid,fn) {
+        var sql=`SELECT *
+        FROM address
+        WHERE u_id=${uid}`;
+        db.query(sql,function (err,data) {
+            fn(err,data);
+        })
+    },
+    payOrder:function (ofNum,aId,fn) {
+        var sql=`UPDATE order_form SET a_id=${aId} WHERE of_num=${ofNum}`;
+        db.query(sql,function (err,data) {
+            fn(err,data);
+        })
+    },
+    addPay:function (ofNum,fn) {
+        // console.log(22222222)
+        var sql=`INSERT INTO pay_form VALUES(NULL,'${ofNum}')`;
+        db.query(sql,function (err,data) {
+            fn(err,data);
+        })
+    },
+    delCart:function (scaId,fn) {
+        console.log(scaId,555555)
+        console.log(scaId[0].scaId);
+        for(var i=0;i<scaId.length;i++){
+            // console.log(i)
+            var sql=`DELETE FROM shop_cart WHERE sca_id=${scaId[i].scaId}`;
+            console.log(i)
+            console.log(sql)
+            db.query(sql,function (err,data) {
+                // if(i==scaId.length-1){
+                    // console.log(i)
+                    fn(err,data);
+                // }
+            })
+        }
+        
+    },
+    delInventory:function (scaId,fn) {
+        // console.log(44444)
+        for(var i=0;i<scaId.length;i++){
+            var sql=`UPDATE shop_spec SET ss_inventory=ss_inventory-${scaId[i].goodsNum} WHERE s_id=${scaId[i].sId} AND ss_color='${scaId[i].sColor}'`;
+            db.query(sql,function (err,data) {
+                // if(i==scaId.length-1){
+                    fn(err,data);
+                // }
+            })
+        }
+        
+    },
+    delSaleVolume:function (scaId,fn) {
+        // console.log(55555)
+        for(var i=0;i<scaId.length;i++){
+            var sql=`UPDATE shop SET s_salevolume=s_salevolume+${scaId[i].goodsNum} WHERE s_id=${scaId[i].sId}`;
+            db.query(sql,function (err,data) {
+                // if(i==scaId.length-1){
+                    fn(err,data);
+                // }
+            })
+        }
+        
+    },
+    noPay:function (ofNum,fn) {
+        // console.log(22222222)
+        var sql=`INSERT INTO nopay_form VALUES(NULL,'${ofNum}')`;
+        db.query(sql,function (err,data) {
+            fn(err,data);
+        })
+    },
+    delCartGoods:function (scaId,fn) {
+        // console.log(22222222)
+        var sql=`DELETE FROM shop_cart where sca_id='${scaId}'`;
+        db.query(sql,function (err,data) {
+            fn(err,data);
+        })
+    },
+};
+
+module.exports=shoplistModel;
